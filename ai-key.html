@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Use your own AI key | JARVIS</title>
+<meta name="description" content="How to get a free AI key and add it to your server.">
+<meta name="theme-color" content="#030814">
+<meta property="og:title" content="Use your own AI key | JARVIS"><meta property="og:description" content="How to get a free AI key and add it to your server."><meta property="og:image" content="assets/og.jpg"><meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Outfit:wght@300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="net" aria-hidden="true"></canvas><div class="bg-glow"></div><div class="bg-grid"></div><div class="cursor-glow"></div>
+<div id="site-header"></div>
+<main class="wrap doc">
+<h1>Use your own AI key</h1>
+<p>The AI chat uses a free key that is shared by all servers, so it can run out on busy days. If your server adds its own free key, <b>your server gets its own limit</b>, and the AI stays fast for your members.</p>
+<p>It takes about two minutes. You need the <b>Manage Server</b> permission.</p>
+
+<h2>Step 1: get a free key</h2>
+<p>We recommend <b>Groq</b>: it is the fastest and has a generous free plan. <b>Gemini</b> also works. Sign-up rules change, so follow what the site asks.</p>
+<ul>
+<li><b>Groq (recommended)</b>: open <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a>, log in, press <b>Create API Key</b>, give it a name and copy the key. It starts with <code>gsk_</code>. Fast answers.</li>
+<li><b>Google Gemini</b>: open <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>, log in with Google, press <b>Create API key</b> and copy it. It starts with <code>AIza</code>.</li>
+</ul>
+<p>The key is shown only once. Copy it right away.</p>
+
+<h2>Step 2: add it in Discord</h2>
+<ol>
+<li>In your server type <code>/ai key</code> and press Enter.</li>
+<li>A private form opens. Nobody else can see what you write.</li>
+<li>In <b>Service</b> write <code>groq</code> (best) or <code>gemini</code>.</li>
+<li>Paste the key. Leave <b>Model</b> empty.</li>
+<li>Press <b>Submit</b>. The bot tests the key first and only saves it if it works.</li>
+</ol>
+<p>Check it with <code>/ai status</code>. Remove it any time with <code>/ai keyremove</code>. Need this guide in Discord? Use <code>/ai keyhelp</code>.</p>
+
+<h2>Good to know</h2>
+<ul>
+<li>Your key is stored <b>encrypted</b>. Never post it in a channel. If you did, delete it on the service's site and make a new one.</li>
+<li>If your key runs out or stops working, the bot switches to the shared AI, so chat keeps going.</li>
+<li>Each free plan has its own daily limit. A small server will almost never reach it.</li>
+<li>Adding a key does not change anything else: facts you taught, the personality and the AI channel stay the same.</li>
+</ul>
+
+<h2>Something wrong?</h2>
+<ul>
+<li><b>&ldquo;did not work&rdquo; when saving:</b> copy the whole key again, with no spaces, and check that you wrote the service name right.</li>
+<li>Still stuck? Ask in the <a data-support href="#">support server</a>.</li>
+</ul>
+</main>
+<div id="site-footer"></div>
+<script src="config.js"></script><script src="data.js"></script><script src="site.js"></script>
+</body></html>

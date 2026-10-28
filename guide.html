@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Server guide | JARVIS</title>
+<meta name="description" content="How to set up JARVIS in your server: welcome, tickets, levels, giveaways, embeds and AI.">
+<meta name="theme-color" content="#030814">
+<meta property="og:title" content="Server guide | JARVIS"><meta property="og:description" content="How to set up JARVIS in your server: welcome, tickets, levels, giveaways, embeds and AI."><meta property="og:image" content="assets/og.jpg"><meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Outfit:wght@300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="net" aria-hidden="true"></canvas><div class="bg-glow"></div><div class="bg-grid"></div><div class="cursor-glow"></div>
+<div id="site-header"></div>
+<main class="wrap doc">
+<h1>Server guide</h1>
+<p>Everything you need to set JARVIS up in your server, step by step. You need the <b>Manage Server</b> permission. Type <code>/</code> in Discord and pick the command. Options marked optional can be skipped.</p>
+
+<h2>1. First steps</h2>
+<ol>
+<li>Add JARVIS with the <b>Add to Discord</b> button.</li>
+<li>In <b>Server Settings &rarr; Roles</b>, drag the JARVIS role <b>above</b> the roles it should give or manage (autorole, level roles, ticket staff). A role that is above JARVIS cannot be given by it.</li>
+<li>Type <code>/help</code> to see all commands.</li>
+</ol>
+
+<h2>2. Welcome and leave messages</h2>
+<ol>
+<li><code>/setup welcome channel:#welcome</code> and set <b>title</b>, <b>message</b> and <b>image</b>.</li>
+<li>In the message you can use <code>{user}</code> <code>{username}</code> <code>{server}</code> <code>{count}</code>. For a new line type <code>\n</code>.</li>
+<li>Use <b>editor</b> for a big text box, and <code>test</code> to preview it.</li>
+<li>Same for leaving: <code>/setup leave</code>.</li>
+</ol>
+
+<h2>3. Tickets</h2>
+<ol>
+<li><code>/ticket setup</code>: choose the staff role (up to 3 roles), the log channel and the panel channel.</li>
+<li><code>/ticket addtype</code>: add a ticket type with its own emoji, description, category and welcome text. Change it later with <code>/ticket edittype</code>.</li>
+<li><code>/ticket panel</code>: sends the panel with the buttons or dropdown. It updates by itself when you change something.</li>
+<li>Only staff can close a ticket. Members cannot.</li>
+</ol>
+
+<h2>4. Levels</h2>
+<ol>
+<li><code>/setup levels enabled:true channel:#levels</code>.</li>
+<li>Write your own level-up text with <b>message</b> (use <code>{user}</code> <code>{level}</code> <code>{server}</code>) and your own picture with <b>background</b>.</li>
+<li>Press <b>test</b> to see the card. Give roles at a level with <code>/levelrole add</code>.</li>
+</ol>
+
+<h2>5. Giveaways</h2>
+<ol>
+<li><code>/giveaway start prize:Nitro minutes:60 winners:1</code>.</li>
+<li>Add a picture with <b>image</b> (PNG, JPG, GIF or WEBP) and rules or sponsor text with <b>description</b>.</li>
+<li><code>/giveaway end id:</code> ends it now, <code>/giveaway reroll id:</code> picks new winners. The ID is in the giveaway footer.</li>
+</ol>
+
+<h2>6. Embeds and emojis</h2>
+<ol>
+<li><code>/embed</code> makes a nice message. Fill the title and text, pick a colour, add a picture, and choose the channel.</li>
+<li>Normal emojis (like &#128293;) just work.</li>
+<li>To use a custom emoji, write <code>:name:</code>. It turns into the real emoji if the emoji is in <b>your server</b> (where JARVIS is) or in JARVIS' own emoji list.</li>
+<li>If <code>:name:</code> stays as text, JARVIS cannot see that emoji. Upload it to your server, or paste the full emoji code: in chat send <code>\:name:</code> and copy what you see, like <code>&lt;:name:123456789&gt;</code>.</li>
+</ol>
+
+<h2>7. AI chat</h2>
+<ol>
+<li><code>/ai channel channel:#chat</code>: JARVIS talks with everyone in that channel. You can also @mention it anywhere.</li>
+<li><code>/ai teach</code> teaches it facts about your server. <code>/ai persona</code> changes its personality. <code>/ai reset</code> makes it forget everything.</li>
+<li>Want it faster? Add your own free key: <a href="ai-key.html">AI key guide</a>.</li>
+</ol>
+
+<h2>8. Moderation and safety</h2>
+<ul>
+<li><code>/automod status</code> shows spam, invite and bad-word protection. Turn parts on or off there.</li>
+<li><code>/antinuke</code> and <code>/antiraid</code> protect against mass bans and raids.</li>
+<li><code>/setup logs</code> sets the log channel. <code>/warn</code>, <code>/timeout</code>, <code>/kick</code> and <code>/ban</code> do what they say.</li>
+</ul>
+
+<h2>9. Music</h2>
+<p><code>/play</code> works with song names and SoundCloud or Spotify links. YouTube links are off on most hosting because YouTube blocks them.</p>
+
+<h2>Something wrong?</h2>
+<ul>
+<li><b>A command is missing:</b> press <b>Ctrl+R</b> in Discord to reload, and check that you have the permission for it.</li>
+<li><b>&ldquo;Invalid role&rdquo;:</b> pick the role from the list that appears, do not type it.</li>
+<li><b>JARVIS cannot give a role:</b> move the JARVIS role higher (step 1).</li>
+<li><b>AI does not answer:</b> run <code>/ai status</code> and see the <a href="ai-key.html">AI key guide</a>.</li>
+<li>Still stuck? Ask in the <a data-support href="#">support server</a>.</li>
+</ul>
+</main>
+<div id="site-footer"></div>
+<script src="config.js"></script><script src="data.js"></script><script src="site.js"></script>
+</body></html>

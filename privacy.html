@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy | JARVIS</title>
+<meta name="description" content="Privacy policy for the JARVIS Discord bot.">
+<meta name="theme-color" content="#030814">
+<meta property="og:title" content="Privacy policy | JARVIS"><meta property="og:description" content="Privacy policy for the JARVIS Discord bot."><meta property="og:image" content="assets/og.jpg"><meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Outfit:wght@300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="net" aria-hidden="true"></canvas><div class="bg-glow"></div><div class="bg-grid"></div><div class="cursor-glow"></div>
+<div id="site-header"></div>
+<main class="wrap doc">
+<h1>Privacy policy</h1>
+<p class="updated">Last updated: <span data-updated></span></p>
+<p><span data-bot-name></span> is a Discord bot. This page explains what information it handles when it is in your server, why, and how to have it removed.</p>
+
+<h2>What the bot stores</h2>
+<p>Only what its features need:</p>
+<ul>
+<li><strong>Server settings:</strong> the server ID and settings admins choose, such as welcome, log, suggestion, starboard and AI channel IDs, role IDs, welcome text, prefix, automod, antinuke and anti-raid settings, banned words, auto replies, vanity text and the antinuke trusted list.</li>
+<li><strong>Leveling:</strong> user ID, XP and level per server, plus level reward roles set by admins.</li>
+<li><strong>Economy:</strong> user ID, coin balance, the time of the last <code>/daily</code> and <code>/work</code>, and owned shop items per server.</li>
+<li><strong>Warnings, moderation cases and temporary bans:</strong> user IDs, the moderator's ID, the action, the reason and the time (this powers the mod history).</li>
+<li><strong>Tickets:</strong> ticket number, category, subject, who opened and who claimed it, priority, times and the close reason. A transcript of the ticket channel is generated when a ticket closes and sent to the server's log channel and to the person who opened the ticket. We do not keep the transcript in our database.</li>
+<li><strong>Reminders:</strong> the reminder text, your user ID, the channel and the time it is due. It is deleted after it is delivered.</li>
+<li><strong>AFK status:</strong> your user ID, the reason you gave and the time, until you send a message again.</li>
+<li><strong>Suggestions and starboard:</strong> the suggestion text with the author's ID, and the IDs of messages that were starred.</li>
+<li><strong>Giveaways:</strong> prize, channel and message IDs, end time, host ID and the user IDs of entrants.</li>
+<li><strong>Music:</strong> if an admin turns on 24/7 mode, the voice and text channel IDs are saved so the bot can rejoin after a restart.</li>
+</ul>
+
+<h2>What the bot reads but does not store</h2>
+<ul>
+<li><strong>Message content.</strong> The bot reads messages to award XP, apply automod, handle AFK, run auto replies, run prefix commands and chat with the AI. Text is processed in memory and is not saved to our database. The most recent deleted and edited message in a channel is kept in memory for up to one hour for the snipe command, then discarded.</li>
+<li><strong>AI chat.</strong> When someone talks to the bot in the AI channel, mentions it, or uses <code>/ask</code>, that message and a short recent history of that conversation are sent to a third-party AI service to generate a reply. Do not share private information with the AI. Conversations are kept in memory only and are cleared regularly. A server admin can add the server's own AI key (<code>/ai key</code>). That key is stored encrypted in the database, is used only for that server's AI replies, and is deleted with <code>/ai keyremove</code> or when the bot leaves the server.</li>
+<li><strong>Custom status.</strong> If the vanity role is on, the bot reads members' custom status text to check for the admin's chosen text. It is not saved.</li>
+<li><strong>Server logs.</strong> If an admin sets a log channel, the bot posts message edits and deletes there, including the text. That text lives in the admin's own Discord server.</li>
+<li><strong>Music requests.</strong> Song names and links are used to find audio from public sources and are not saved.</li>
+<li><strong>Audit logs.</strong> If antinuke is on, the bot reads the server's audit log to see who deleted channels, banned members and so on.</li>
+</ul>
+
+<h2>How we use it</h2>
+<p>Only to run these features in the server where you used them. We do not sell your information, use it for advertising, or build profiles of people across servers.</p>
+
+<h2>Who it is shared with</h2>
+<p>Nobody, except the services needed to run the bot: Discord, the hosting provider that stores the database, the public streaming sources used to find music, and the AI service used for AI chat.</p>
+
+<h2>How long we keep it</h2>
+<ul>
+<li>When the bot is removed from a server, that server's stored data is deleted.</li>
+<li>You can ask us to delete your personal data (levels, coins, warnings, inventory, giveaway entries, reminders, suggestions) at any time. Email <a data-email href="#">us</a> with your Discord user ID and, if you want it limited to one server, that server's ID.</li>
+<li>Server admins can also remove many things themselves, for example with <code>/unwarn</code>, <code>/setup clear</code> and <code>/autoresponder remove</code>.</li>
+</ul>
+
+<h2>Children</h2>
+<p>Discord requires users to be at least 13 (or the minimum age in their country). The bot is not meant for anyone younger and we do not knowingly collect their data.</p>
+
+<h2>Security</h2>
+<p>The database is stored on the hosting provider's servers and is not publicly accessible. No system is perfectly secure, so we cannot promise absolute security.</p>
+
+<h2>Changes</h2>
+<p>If we change this policy we will update the date at the top. Continuing to use the bot after a change means you accept it.</p>
+
+<h2>Contact</h2>
+<p>Questions or deletion requests: <a data-email href="#">email us</a>.</p>
+</main>
+<div id="site-footer"></div>
+<script src="config.js"></script><script src="data.js"></script><script src="site.js"></script>
+</body></html>

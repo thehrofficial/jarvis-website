@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JARVIS | All-in-One Discord Bot</title>
+<meta name="description" content="JARVIS is a free all-in-one Discord bot: moderation, antinuke, tickets, music, AI chat, levels, economy, giveaways and more.">
+<meta name="theme-color" content="#030814">
+<meta property="og:title" content="JARVIS | All-in-One Discord Bot"><meta property="og:description" content="JARVIS is a free all-in-one Discord bot: moderation, antinuke, tickets, music, AI chat, levels, economy, giveaways and more."><meta property="og:image" content="assets/og.jpg"><meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Outfit:wght@300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="net" aria-hidden="true"></canvas><div class="bg-glow"></div><div class="bg-grid"></div><div class="cursor-glow"></div>
+<div id="site-header"></div>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <span class="eyebrow"><i></i> Online 24/7 • Free</span>
+    <h1><span class="grad">JARVIS</span><br>All-in-one<br>Discord bot</h1>
+    <p class="lead">Moderation, antinuke, tickets, music, AI chat, levels, economy and giveaways. One bot for everything your server needs, with nothing locked behind a paywall.</p>
+    <div class="cta">
+      <a class="btn btn-primary" data-invite href="#">Add to Discord</a>
+      <a class="btn btn-ghost" data-support href="#">Support server</a>
+      <a class="btn btn-ghost" href="commands.html">Browse commands</a>
+    </div>
+    <div class="mini-stats">
+      <div><b data-to="1" data-count="cmds">0</b><span>Commands</span></div>
+      <div><b data-to="12">0</b><span>Audio effects</span></div>
+      <div data-hide-if-no-servers><b data-servers data-to="0">0</b><span>Servers</span></div>
+      <div><b>24/7</b><span>Music mode</span></div>
+    </div>
+  </div>
+  <div class="orbit-stage">
+    <div class="ring r2"></div><div class="ring"></div>
+    <div class="orbiter" id="orbiter"></div>
+    <img class="logo" src="assets/logo.png" alt="JARVIS logo: a crowned J on a shield" width="640" height="640" fetchpriority="high">
+  </div>
+</div>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marq"></div></div>
+
+<section id="features"><div class="wrap">
+  <div class="sec-head rv"><div class="kicker">Everything in one place</div><h2>One bot. <span class="grad">Every feature.</span></h2><p>Stop adding five different bots. JARVIS covers the whole server, and every feature is switchable per server.</p></div>
+  <div class="grid" id="feature-grid"></div>
+</div></section>
+
+<section style="padding-top:20px"><div class="wrap">
+  <div class="sec-head rv"><div class="kicker">What each feature does</div><h2>Every feature, <span class="grad">explained</span></h2><p>Here is what you get, with a preview of how it looks in Discord.</p></div>
+  <div id="details"></div>
+</div></section>
+
+<section id="showcase"><div class="wrap">
+  <div class="sec-head rv"><div class="kicker">See it in action</div><h2>Built to feel <span class="grad">fast and clean</span></h2><p>Buttons, dropdowns and pop-up forms instead of long commands to remember.</p></div>
+  <div class="show rv">
+    <div class="tabs" id="tabs"></div>
+    <div class="chat"><div class="chat-bar"><i></i><i></i><i></i>&nbsp;&nbsp;<span id="chat-ch">#music</span></div><div class="chat-body" id="chat-body"></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="numbers rv">
+    <div class="num"><b data-to="1" data-count="cmds">0</b><span>Commands</span></div>
+    <div class="num"><b data-to="7">0</b><span>Antinuke guards</span></div>
+    <div class="num"><b data-to="12">0</b><span>Music effects</span></div>
+    <div class="num"><b data-to="100" data-suffix="%">0</b><span>Free to use</span></div>
+  </div>
+</div></section>
+
+<section style="padding:30px 0"><div class="wrap">
+  <div class="sec-head rv" style="margin-bottom:0"><div class="kicker">Two ways to use it</div><h2>Slash commands <span class="grad">and prefix</span></h2><p>Every command works as <code style="font-family:var(--mono);color:#8cc7ff">/play</code> and with a prefix like <code style="font-family:var(--mono);color:#8cc7ff">!play</code>. Admins can change the prefix with <code style="font-family:var(--mono);color:#8cc7ff">/prefix</code>.</p></div>
+</div></section>
+
+<section id="setup"><div class="wrap">
+  <div class="sec-head rv"><div class="kicker">Ready in two minutes</div><h2>Get started in <span class="grad">3 steps</span></h2></div>
+  <div class="steps">
+    <div class="step rv"><h3>Add the bot</h3><p>Click <b>Add to Discord</b>, pick your server and approve the permissions.</p></div>
+    <div class="step rv"><h3>Run the setup</h3><p>Use <code>/setup welcome</code>, <code>/setup logs</code> and <code>/ticket setup</code>. Turn on <code>/antinuke enable</code> for protection.</p></div>
+    <div class="step rv"><h3>Enjoy</h3><p>Join a voice channel and <code>/play</code> something. Use <code>/help</code> any time.</p></div>
+  </div>
+  <p class="legal rv" style="text-align:center;margin-top:24px">Tip for antinuke: drag the JARVIS role to the top of your role list so it can act on anyone below it.</p>
+</div></section>
+
+<section id="custom"><div class="wrap">
+  <div class="sec-head rv"><div class="kicker">Optional extra</div><h2>Make JARVIS <span class="grad">look like yours</span></h2><p>Want the bot to match your community? We can give JARVIS its own name, profile picture, banner and bio in your server. Other servers are not affected.</p></div>
+  <div class="grid" style="max-width:820px;margin:auto">
+    <div class="card rv"><h3>Custom bot profile</h3><p>Your server name for the bot, your own picture and banner, and a bio. It is set up for you by the bot owner and can be changed or removed any time. This is a paid extra for servers that want it. Every feature of the bot stays free for everyone.</p>
+      <p style="margin-top:12px">To get it, join the support server and open a ticket. We will tell you the price and what we need from you.</p>
+      <a class="btn btn-primary" data-support href="#" style="margin-top:16px;display:inline-block">Ask in the support server</a></div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <div class="sec-head rv"><div class="kicker">Questions</div><h2>Quick <span class="grad">answers</span></h2></div>
+  <div class="faq rv">
+    <details><summary>Is JARVIS free?</summary><p>Yes. All features are free to use. The only paid extra is an optional custom profile (your own bot name, picture, banner and bio in your server). Ask in the support server.</p></details>
+    <details><summary>Which permissions does it need?</summary><p>The invite asks for Administrator so every feature works out of the box. You can lower it, but antinuke, tickets, roles and music need Manage Channels, Manage Roles, Ban Members, View Audit Log, Connect and Speak.</p></details>
+    <details><summary>Where can it play music from?</summary><p>SoundCloud, Spotify songs, albums and playlists, and direct audio links. It can stay in a voice channel 24/7 with <code>/247 enable</code>.</p></details>
+    <details><summary>How does antinuke work?</summary><p>If someone deletes or creates too many channels or roles, bans or kicks too many people, or creates webhooks too fast, JARVIS punishes them in seconds (ban, kick or strip roles) and alerts the owner. You can whitelist people you trust.</p></details>
+    <details><summary>What data do you store?</summary><p>Only what features need, like settings, levels and tickets. See the <a href="privacy.html">privacy policy</a>. Data is deleted when the bot leaves your server.</p></details>
+    <details><summary>Something is not working. Who do I ask?</summary><p>Join the support server (link in the footer) or email us from the privacy page.</p></details>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="cta-box rv">
+    <img src="assets/banner.jpg" alt="" loading="lazy">
+    <div class="over"><h2>Ready to upgrade <span class="grad">your server?</span></h2><p style="color:#b6caee;max-width:520px">Your server, our priority.</p>
+      <div class="cta"><a class="btn btn-primary" data-invite href="#">Add JARVIS now</a><a class="btn btn-ghost" data-support href="#">Support server</a><a class="btn btn-ghost" href="commands.html">All commands</a></div></div>
+  </div>
+</div></section>
+</main>
+
+<div id="site-footer"></div>
+<script src="config.js"></script><script src="data.js"></script><script src="site.js"></script>
+</body></html>
