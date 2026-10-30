@@ -213,17 +213,27 @@ window.FEATURES = [
   "id": "tickets",
   "name": "Tickets",
   "icon": "ticket",
-  "blurb": "One-step setup, ticket types as buttons, claim, priority, close with reason, reopen, auto-close and full HTML transcripts.",
+  "blurb": "One-step setup with up to 3 staff roles, panel and ticket pictures, ticket types as buttons, staff-only close, claim, priority, auto-close and full HTML transcripts.",
   "commands": [
    {
     "c": "/ticket setup",
-    "a": "staff_role, panel_channel?, category?, log_channel?, max_per_user?, auto_close_hours?, title?, description?",
+    "a": "staff_role, staff_role2?, staff_role3?, style?, panel_image?, ticket_image?, panel_channel?, category?, log_channel?, max_per_user?, auto_close_hours?, title?, description?",
     "d": "Set up tickets in one step and post the panel (admin)"
    },
    {
     "c": "/ticket addtype",
-    "a": "name, emoji?, description?, role?",
+    "a": "name, emoji?, description?, category?, role?, welcome?",
     "d": "Add a ticket type like Support, Report, Buy (admin)"
+   },
+   {
+    "c": "/ticket edittype",
+    "a": "name, new_name?, emoji?, description?, category?, role?, welcome?",
+    "d": "Change a ticket type (admin)"
+   },
+   {
+    "c": "/ticket panel",
+    "a": "channel?",
+    "d": "Post the ticket panel again (admin)"
    },
    {
     "c": "/ticket removetype",
@@ -276,16 +286,16 @@ window.FEATURES = [
   "id": "music",
   "name": "Music",
   "icon": "music",
-  "blurb": "YouTube, SoundCloud, Spotify songs/albums/playlists and mp3s. Player buttons, 12 audio effects, queue tools and 24/7 voice mode.",
+  "blurb": "SoundCloud, Spotify songs/albums/playlists and mp3s. Player buttons, 12 audio effects, queue tools and 24/7 voice mode.",
   "commands": [
    {
     "c": "/play",
-    "a": "query, source?, next?",
-    "d": "Play a song, playlist or link (YouTube, SoundCloud, Spotify song/album/playlist, mp3)"
+    "a": "query, next?",
+    "d": "Play a song, playlist or link (SoundCloud, Spotify song/album/playlist, mp3)"
    },
    {
     "c": "/search",
-    "a": "query, source?",
+    "a": "query",
     "d": "Search and pick a song from the top 5 results"
    },
    {
@@ -404,7 +414,7 @@ window.FEATURES = [
   "id": "ai",
   "name": "AI & Auto replies",
   "icon": "bot",
-  "blurb": "Chat with an AI in a channel or with /ask, and set automatic replies to words.",
+  "blurb": "Chat with an AI in a channel or with /ask, teach it many facts at once, and set automatic replies to words.",
   "commands": [
    {
     "c": "/ask",
@@ -423,7 +433,7 @@ window.FEATURES = [
    },
    {
     "c": "/ai teach",
-    "a": "fact",
+    "a": "fact?",
     "d": "Teach the AI a fact about your server (rules, staff, events...)"
    },
    {
@@ -439,7 +449,22 @@ window.FEATURES = [
    {
     "c": "/ai reset",
     "a": "",
-    "d": "Make the AI forget this channel"
+    "d": "Make the AI forget everything: all chats and all taught facts"
+   },
+   {
+    "c": "/ai key",
+    "a": "",
+    "d": "Use your own free AI key for this server (private form)"
+   },
+   {
+    "c": "/ai keyremove",
+    "a": "",
+    "d": "Go back to the bot's shared AI"
+   },
+   {
+    "c": "/ai keyhelp",
+    "a": "",
+    "d": "How to get a free AI key and add it"
    },
    {
     "c": "/ai status",
@@ -572,7 +597,7 @@ window.FEATURES = [
   "commands": [
    {
     "c": "/giveaway start",
-    "a": "prize, minutes, winners?",
+    "a": "prize, minutes, winners?, image?, description?",
     "d": "Start a giveaway in this channel"
    },
    {
@@ -630,8 +655,8 @@ window.FEATURES = [
    },
    {
     "c": "/poll",
-    "a": "question, options?",
-    "d": "Create a quick poll"
+    "a": "question, options?, minutes?, multiple?, show_names?, role?",
+    "d": "Create a poll with buttons, live results and a timer"
    },
    {
     "c": "/minigame tictactoe",
@@ -702,7 +727,7 @@ window.FEATURES = [
   "id": "setup",
   "name": "Server setup",
   "icon": "sliders",
-  "blurb": "Welcome, logs, autorole, vanity role, role panels and the text-command prefix.",
+  "blurb": "Welcome and goodbye messages with title and banner image, logs, autorole, vanity role, role panels and the text-command prefix.",
   "commands": [
    {
     "c": "/prefix",
@@ -711,13 +736,13 @@ window.FEATURES = [
    },
    {
     "c": "/setup welcome",
-    "a": "channel, message?",
-    "d": "Set the welcome channel and message"
+    "a": "channel?, title?, message?, image?, editor?, avatar?, test?",
+    "d": "Welcome message: channel, title, text and banner image"
    },
    {
     "c": "/setup leave",
-    "a": "channel",
-    "d": "Set the goodbye channel"
+    "a": "channel?, title?, message?, image?, editor?, test?",
+    "d": "Goodbye message: channel, title, text and image"
    },
    {
     "c": "/setup logs",
@@ -746,7 +771,7 @@ window.FEATURES = [
    },
    {
     "c": "/setup levels",
-    "a": "enabled?, channel?, announce?",
+    "a": "enabled?, channel?, announce?, message?, card?, background?, test?",
     "d": "Leveling: turn on/off and choose where level-up messages go"
    },
    {
@@ -902,13 +927,13 @@ window.FEATURES = [
    },
    {
     "c": "/say",
-    "a": "text, channel?",
-    "d": "Make the bot say something"
+    "a": "text, channel?, as?",
+    "d": "Make the bot say something, or say it as another member"
    },
    {
     "c": "/embed",
-    "a": "title, text, color?, image?",
-    "d": "Send a nice embed message"
+    "a": "title?, text?, color?, footer?, image_file?, thumbnail_file?, image?, channel?, editor?",
+    "d": "Build and send your own embed message"
    },
    {
     "c": "/roleinfo",

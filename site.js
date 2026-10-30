@@ -27,7 +27,7 @@
   const icon = (n) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n] || ICONS.star}</svg>`;
 
   const invite = B.inviteUrl || (/^\d{15,25}$/.test(B.clientId || '')
-    ? `https://discord.com/oauth2/authorize?client_id=${B.clientId}&scope=bot%20applications.commands&permissions=8` : '#');
+    ? `https://discord.com/oauth2/authorize?client_id=${B.clientId}&scope=bot%20applications.commands&permissions=1394676722935` : '#');
 
   /* ---------- shared header / footer ---------- */
   const page = location.pathname.split('/').pop() || 'index.html';

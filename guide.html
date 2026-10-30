@@ -57,17 +57,25 @@
 <li><code>/giveaway end id:</code> ends it now, <code>/giveaway reroll id:</code> picks new winners. The ID is in the giveaway footer.</li>
 </ol>
 
+<h2>Polls</h2>
+<ol>
+<li><code>/poll question:Best colour? options:Red, Blue, Green minutes:30</code>. Members vote with buttons, results update live.</li>
+<li>Leave <b>options</b> empty for Yes / No. Use <b>multiple</b> to let people pick more than one. Votes are secret unless you turn on <b>show_names</b>. Use <b>role</b> to let only one role vote.</li>
+<li>With <b>minutes</b> the poll closes by itself and shows the winner. Without it, press <b>End poll</b> (host or moderator).</li>
+</ol>
+
 <h2>6. Embeds and emojis</h2>
 <ol>
 <li><code>/embed</code> makes a nice message. Fill the title and text, pick a colour, add a picture, and choose the channel.</li>
 <li>Normal emojis (like &#128293;) just work.</li>
-<li>To use a custom emoji, write <code>:name:</code>. It turns into the real emoji if the emoji is in <b>your server</b> (where JARVIS is) or in JARVIS' own emoji list.</li>
-<li>If <code>:name:</code> stays as text, JARVIS cannot see that emoji. Upload it to your server, or paste the full emoji code: in chat send <code>\:name:</code> and copy what you see, like <code>&lt;:name:123456789&gt;</code>.</li>
+<li>To use an emoji, write <code>:name:</code>. Common names like <code>:arrow:</code>, <code>:fire:</code> or <code>:announcement:</code> become a normal emoji that works everywhere. If an emoji with that name is in <b>your server</b> or in JARVIS' own list, that one is used instead.</li>
+<li>If <code>:name:</code> stays as text, JARVIS cannot see that emoji (the bot tells you). Upload it to your server and run the command again, or paste the full emoji code: in chat send <code>\:name:</code> and copy what you see, like <code>&lt;:name:123456789&gt;</code>.</li>
 </ol>
 
 <h2>7. AI chat</h2>
 <ol>
 <li><code>/ai channel channel:#chat</code>: JARVIS talks with everyone in that channel. You can also @mention it anywhere.</li>
+<li>Ask JARVIS itself: <i>what can you do?</i> or <i>my tickets are not opening</i>. It knows all its features and the common fixes.</li>
 <li><code>/ai teach</code> teaches it facts about your server. <code>/ai persona</code> changes its personality. <code>/ai reset</code> makes it forget everything.</li>
 <li>Want it faster? Add your own free key: <a href="ai-key.html">AI key guide</a>.</li>
 </ol>
