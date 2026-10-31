@@ -597,8 +597,18 @@ window.FEATURES = [
   "commands": [
    {
     "c": "/giveaway start",
-    "a": "prize, minutes, winners?, image?, description?, bonus_role?, bonus_entries?, required_role?",
+    "a": "prize, minutes, winners?, image?, description?, bonus_role?, bonus_entries?, bonus_role2?, bonus_entries2?, bonus_role3?, bonus_entries3?, required_role?, blocked_role?, blocked_role2?",
     "d": "Start a giveaway in this channel"
+   },
+   {
+    "c": "/giveaway bonus",
+    "a": "id, role, extra",
+    "d": "Add or change a bonus role on a running giveaway"
+   },
+   {
+    "c": "/giveaway block",
+    "a": "id, role",
+    "d": "Block or unblock a role from a giveaway (toggle)"
    },
    {
     "c": "/giveaway entries",
@@ -609,11 +619,6 @@ window.FEATURES = [
     "c": "/giveaway remove",
     "a": "id, user",
     "d": "Remove one person from a giveaway"
-   },
-   {
-    "c": "/giveaway addentries",
-    "a": "id, user, count",
-    "d": "Give someone extra entries (also enters them)"
    },
    {
     "c": "/giveaway end",
@@ -869,6 +874,11 @@ window.FEATURES = [
     "c": "/voice setup",
     "a": "hub?",
     "d": "Set the \"Join to create\" channel (admin)"
+   },
+   {
+    "c": "/voice interface",
+    "a": "channel?",
+    "d": "Post the voice control interface in a channel (admin)"
    },
    {
     "c": "/voice lock",

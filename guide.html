@@ -56,14 +56,15 @@
 <li><code>/giveaway start prize:Nitro minutes:60 winners:1</code>.</li>
 <li>Add a picture with <b>image</b> (PNG, JPG, GIF or WEBP) and rules or sponsor text with <b>description</b>.</li>
 <li><code>/giveaway end id:</code> ends it now, <code>/giveaway reroll id:</code> picks new winners. The ID is in the giveaway footer.</li>
-<li><b>Extra entries:</b> <b>bonus_role</b> + <b>bonus_entries</b> give a role more tickets, <b>required_role</b> lets only that role enter.</li>
-<li><code>/giveaway entries id:</code> shows who joined, <code>/giveaway remove id: user:</code> removes someone, <code>/giveaway addentries id: user: count:</code> gives extra tickets. Members can press the <b>Entries</b> button to see who joined.</li>
+<li><b>Extra entries by role:</b> up to 3 roles with <b>bonus_role</b> + <b>bonus_entries</b> (for example Booster +2, Donator +3, they add up). <b>required_role</b> lets only that role enter and <b>blocked_role</b> keeps a role out. Change them later with <code>/giveaway bonus</code> and <code>/giveaway block</code>.</li>
+<li><code>/giveaway entries id:</code> shows who joined, <code>/giveaway remove id: user:</code> removes someone. Members can press the <b>Entries</b> button to see who joined.</li>
 </ol>
 
 <h2>Birthdays, role panels and more</h2>
 <ol>
 <li><b>Birthdays:</b> members use <code>/birthday set</code>. Admins run <code>/birthday setup channel: role: message:</code> for daily wishes.</li>
 <li><b>Role panels:</b> <code>/rolepanel title: role1: emoji1:</code> up to 10 roles, buttons or dropdown, <b>single</b> to allow only one role.</li>
+<li><b>Voice interface:</b> <code>/voice interface channel:#interface</code> posts a permanent control panel; its buttons control the voice room the member is in.</li>
 <li><b>Dashboard:</b> <code>/setup panel</code> shows what is set up and what is missing. <code>/setup emojis</code> is an emoji picker.</li>
 <li><b>Auto-react:</b> <code>/setup autoreact channel: emojis:</code> reacts to every message in a channel.</li>
 <li><b>Verify:</b> <code>/verify mode:math</code> asks a small sum. <code>/setup welcome dm:true</code> also sends the welcome in DM.</li>
