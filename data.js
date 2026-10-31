@@ -217,17 +217,17 @@ window.FEATURES = [
   "commands": [
    {
     "c": "/ticket setup",
-    "a": "staff_role, staff_role2?, staff_role3?, style?, panel_image?, ticket_image?, panel_channel?, category?, log_channel?, max_per_user?, auto_close_hours?, title?, description?",
+    "a": "staff_role, staff_role2?, staff_role3?, style?, color?, panel_image?, ticket_image?, panel_channel?, category?, log_channel?, max_per_user?, auto_close_hours?, title?, description?",
     "d": "Set up tickets in one step and post the panel (admin)"
    },
    {
     "c": "/ticket addtype",
-    "a": "name, emoji?, description?, category?, role?, welcome?",
+    "a": "name, emoji?, description?, color?, category?, role?, welcome?",
     "d": "Add a ticket type like Support, Report, Buy (admin)"
    },
    {
     "c": "/ticket edittype",
-    "a": "name, new_name?, emoji?, description?, category?, role?, welcome?",
+    "a": "name, new_name?, emoji?, description?, color?, category?, role?, welcome?",
     "d": "Change a ticket type (admin)"
    },
    {
@@ -593,12 +593,27 @@ window.FEATURES = [
   "id": "giveaway",
   "name": "Giveaways",
   "icon": "gift",
-  "blurb": "Start, end and reroll giveaways with a click-to-enter button.",
+  "blurb": "Start giveaways with images, bonus-role entries and required roles. See who joined, remove or add entries, reroll.",
   "commands": [
    {
     "c": "/giveaway start",
-    "a": "prize, minutes, winners?, image?, description?",
+    "a": "prize, minutes, winners?, image?, description?, bonus_role?, bonus_entries?, required_role?",
     "d": "Start a giveaway in this channel"
+   },
+   {
+    "c": "/giveaway entries",
+    "a": "id",
+    "d": "See who joined a giveaway"
+   },
+   {
+    "c": "/giveaway remove",
+    "a": "id, user",
+    "d": "Remove one person from a giveaway"
+   },
+   {
+    "c": "/giveaway addentries",
+    "a": "id, user, count",
+    "d": "Give someone extra entries (also enters them)"
    },
    {
     "c": "/giveaway end",
@@ -609,6 +624,39 @@ window.FEATURES = [
     "c": "/giveaway reroll",
     "a": "id",
     "d": "Pick new winners for an ended giveaway"
+   }
+  ]
+ },
+ {
+  "id": "birthday",
+  "name": "Birthdays",
+  "icon": "gift",
+  "blurb": "Members save their birthday; the bot wishes them daily and can give a birthday role.",
+  "commands": [
+   {
+    "c": "/birthday set",
+    "a": "day, month, year?",
+    "d": "Save your birthday"
+   },
+   {
+    "c": "/birthday remove",
+    "a": "",
+    "d": "Delete your birthday"
+   },
+   {
+    "c": "/birthday show",
+    "a": "user?",
+    "d": "Show someone's birthday"
+   },
+   {
+    "c": "/birthday list",
+    "a": "",
+    "d": "The next birthdays in this server"
+   },
+   {
+    "c": "/birthday setup",
+    "a": "channel?, role?, message?, timezone?, off?",
+    "d": "Set where happy-birthday messages go (admin)"
    }
   ]
  },
@@ -735,8 +783,13 @@ window.FEATURES = [
     "d": "Show or change the text-command prefix (like !play)"
    },
    {
+    "c": "/setup autoreact",
+    "a": "channel, emojis?, off?",
+    "d": "Bot adds reactions to every message in a channel"
+   },
+   {
     "c": "/setup welcome",
-    "a": "channel?, title?, message?, image?, editor?, avatar?, test?",
+    "a": "channel?, title?, message?, image?, editor?, avatar?, dm?, test?",
     "d": "Welcome message: channel, title, text and banner image"
    },
    {
@@ -785,14 +838,24 @@ window.FEATURES = [
     "d": "Show the current settings"
    },
    {
-    "c": "/rolepanel",
-    "a": "title, role1, role2?, role3?, role4?, role5?",
-    "d": "Post a panel where members click buttons to get/remove roles"
+    "c": "/setup panel",
+    "a": "",
+    "d": "One panel: see what is set up and change channels with menus"
    },
    {
-    "c": "/vanitypanel",
+    "c": "/setup emojis",
+    "a": "",
+    "d": "Browse the emojis I can use and copy their :names:"
+   },
+   {
+    "c": "/setup vanitypanel",
     "a": "",
     "d": "Post a button members can press to check their vanity status"
+   },
+   {
+    "c": "/rolepanel",
+    "a": "title, role1, role2?, role3?, role4?, role5?, role6?, role7?, role8?, role9?, role10?, description?, style?, color?, single?, emoji1?, emoji2?, emoji3?, emoji4?, emoji5?, emoji6?, emoji7?, emoji8?, emoji9?, emoji10?",
+    "d": "Post a panel where members pick their own roles (buttons or dropdown)"
    }
   ]
  },
@@ -902,7 +965,7 @@ window.FEATURES = [
    },
    {
     "c": "/verify",
-    "a": "role, text?",
+    "a": "role, text?, mode?",
     "d": "Post a verification button (members click to get a role)"
    },
    {

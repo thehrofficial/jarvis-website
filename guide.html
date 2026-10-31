@@ -40,6 +40,7 @@
 <li><code>/ticket setup</code>: choose the staff role (up to 3 roles), the log channel and the panel channel.</li>
 <li><code>/ticket addtype</code>: add a ticket type with its own emoji, description, category and welcome text. Change it later with <code>/ticket edittype</code>.</li>
 <li><code>/ticket panel</code>: sends the panel with the buttons or dropdown. It updates by itself when you change something.</li>
+<li>Button colour: <code>color:</code> in <code>/ticket setup</code> (all buttons) or in <code>/ticket addtype</code> / <code>/ticket edittype</code> (one type). Blue, grey, green or red. Colours need <code>style:Buttons</code>; a dropdown has none.</li>
 <li>Only staff can close a ticket. Members cannot.</li>
 </ol>
 
@@ -55,12 +56,23 @@
 <li><code>/giveaway start prize:Nitro minutes:60 winners:1</code>.</li>
 <li>Add a picture with <b>image</b> (PNG, JPG, GIF or WEBP) and rules or sponsor text with <b>description</b>.</li>
 <li><code>/giveaway end id:</code> ends it now, <code>/giveaway reroll id:</code> picks new winners. The ID is in the giveaway footer.</li>
+<li><b>Extra entries:</b> <b>bonus_role</b> + <b>bonus_entries</b> give a role more tickets, <b>required_role</b> lets only that role enter.</li>
+<li><code>/giveaway entries id:</code> shows who joined, <code>/giveaway remove id: user:</code> removes someone, <code>/giveaway addentries id: user: count:</code> gives extra tickets. Members can press the <b>Entries</b> button to see who joined.</li>
+</ol>
+
+<h2>Birthdays, role panels and more</h2>
+<ol>
+<li><b>Birthdays:</b> members use <code>/birthday set</code>. Admins run <code>/birthday setup channel: role: message:</code> for daily wishes.</li>
+<li><b>Role panels:</b> <code>/rolepanel title: role1: emoji1:</code> up to 10 roles, buttons or dropdown, <b>single</b> to allow only one role.</li>
+<li><b>Dashboard:</b> <code>/setup panel</code> shows what is set up and what is missing. <code>/setup emojis</code> is an emoji picker.</li>
+<li><b>Auto-react:</b> <code>/setup autoreact channel: emojis:</code> reacts to every message in a channel.</li>
+<li><b>Verify:</b> <code>/verify mode:math</code> asks a small sum. <code>/setup welcome dm:true</code> also sends the welcome in DM.</li>
 </ol>
 
 <h2>Polls</h2>
 <ol>
 <li><code>/poll question:Best colour? options:Red, Blue, Green minutes:30</code>. Members vote with buttons, results update live.</li>
-<li>Leave <b>options</b> empty for Yes / No. Use <b>multiple</b> to let people pick more than one. Votes are secret unless you turn on <b>show_names</b>. Use <b>role</b> to let only one role vote.</li>
+<li>Leave <b>options</b> empty for Yes / No. Use <b>multiple</b> to let people pick more than one. Votes are secret unless you turn on <b>show_names</b> (the poll then shows 3 voters per option and a <b>Who voted</b> button for the full list). Start an option with an emoji, normal or animated: <code>🍎 Apple | :fire: Hot</code>. Use <b>role</b> to let only one role vote.</li>
 <li>With <b>minutes</b> the poll closes by itself and shows the winner. Without it, press <b>End poll</b> (host or moderator).</li>
 </ol>
 
@@ -86,6 +98,13 @@
 <li><code>/antinuke</code> and <code>/antiraid</code> protect against mass bans and raids.</li>
 <li><code>/setup logs</code> sets the log channel. <code>/warn</code>, <code>/timeout</code>, <code>/kick</code> and <code>/ban</code> do what they say.</li>
 </ul>
+
+<h2>Voice rooms</h2>
+<ol>
+<li><code>/voice setup hub:#Join-to-create</code> (a voice channel). When someone joins it, they get their own room.</li>
+<li>The room chat gets a panel with buttons: Name, Limit, Privacy, Info, Chat, Trust, Untrust, Invite, Kick, Region, Block, Unblock, Claim, Transfer, Delete. Only the room owner can press them.</li>
+<li>The bot needs <b>Manage Channels</b> and <b>Move Members</b>. The room is deleted when everyone leaves.</li>
+</ol>
 
 <h2>9. Music</h2>
 <p><code>/play</code> works with song names and SoundCloud or Spotify links. YouTube links are off on most hosting because YouTube blocks them.</p>
