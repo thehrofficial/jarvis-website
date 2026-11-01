@@ -87,7 +87,7 @@ window.FEATURES = [
   "id": "automod",
   "name": "Automod",
   "icon": "zap",
-  "blurb": "Rules that run on their own: banned words, invite links, spam and mass mentions. Staff are never touched.",
+  "blurb": "A panel with one-click Light / Standard / Strict, a starter bad-word list, and rules for spam, caps, links, invites, mentions and emoji. Staff are never touched.",
   "commands": [
    {
     "c": "/automod status",
@@ -96,8 +96,8 @@ window.FEATURES = [
    },
    {
     "c": "/automod preset",
-    "a": "enabled",
-    "d": "Turn every rule on or off at once"
+    "a": "level?, enabled?",
+    "d": "One click protection level (or use the buttons in /automod status)"
    },
    {
     "c": "/automod rule",
@@ -183,6 +183,16 @@ window.FEATURES = [
     "d": "Change how many actions are allowed per minute"
    },
    {
+    "c": "/antinuke preset",
+    "a": "level",
+    "d": "One-click limits: light, standard or strict (owner only)"
+   },
+   {
+    "c": "/antinuke restore",
+    "a": "enabled",
+    "d": "Put back channels and roles a nuker deleted (owner only)"
+   },
+   {
     "c": "/antinuke botguard",
     "a": "enabled",
     "d": "Kick bots added by people who are not trusted"
@@ -201,6 +211,11 @@ window.FEATURES = [
     "c": "/antiraid disable",
     "a": "",
     "d": "Turn anti-raid off"
+   },
+   {
+    "c": "/antiraid lockdown",
+    "a": "minutes",
+    "d": "Kick every new joiner for a while (use during an attack)"
    },
    {
     "c": "/antiraid status",
@@ -232,8 +247,8 @@ window.FEATURES = [
    },
    {
     "c": "/ticket panel",
-    "a": "channel?",
-    "d": "Post the ticket panel again (admin)"
+    "a": "channel?, types?, title?, description?",
+    "d": "Post a ticket panel (admin). You can post several, each with its own types"
    },
    {
     "c": "/ticket removetype",
@@ -277,8 +292,38 @@ window.FEATURES = [
    },
    {
     "c": "/ticket stats",
+    "a": "staff?",
+    "d": "Ticket statistics: response time, ratings, top staff (staff)"
+   },
+   {
+    "c": "/ticket list",
     "a": "",
-    "d": "Ticket statistics (staff)"
+    "d": "Open tickets right now (staff)"
+   },
+   {
+    "c": "/ticket transfer",
+    "a": "user",
+    "d": "Give this ticket to another staff member (staff)"
+   },
+   {
+    "c": "/ticket closerequest",
+    "a": "reason?",
+    "d": "Ask the member if their problem is solved (staff)"
+   },
+   {
+    "c": "/ticket questions",
+    "a": "type, q1?, q2?, q3?, q4?, q5?",
+    "d": "Questions people answer before a ticket opens (admin)"
+   },
+   {
+    "c": "/ticket blacklist",
+    "a": "action, user?",
+    "d": "Stop someone from opening tickets (admin)"
+   },
+   {
+    "c": "/ticket config",
+    "a": "name_format?, ping_staff?, user_can_close?, rating?, close_on_leave?, max_per_user?, auto_close_hours?",
+    "d": "Ticket settings (admin). No options = show current settings"
    }
   ]
  },
@@ -402,11 +447,6 @@ window.FEATURES = [
     "c": "/247 status",
     "a": "",
     "d": "Show the 24/7 status"
-   },
-   {
-    "c": "/musicstatus",
-    "a": "",
-    "d": "Check that the music system is working (admins)"
    }
   ]
  },
@@ -579,13 +619,83 @@ window.FEATURES = [
   "commands": [
    {
     "c": "/rank",
-    "a": "user?",
-    "d": "Show your level and XP"
+    "a": "user?, color?",
+    "d": "Show your level card (or someone else's)"
    },
    {
     "c": "/leaderboard",
+    "a": "type?, period?",
+    "d": "Top 10: levels, messages sent, or invites"
+   },
+   {
+    "c": "/levels settings",
+    "a": "xp_min?, xp_max?, cooldown?, min_length?, voice_xp?, reward_mode?, announce?",
+    "d": "See or change how XP works. No options = show everything"
+   },
+   {
+    "c": "/levels addreward",
+    "a": "level, role",
+    "d": "Give a role at a level"
+   },
+   {
+    "c": "/levels removereward",
+    "a": "level",
+    "d": "Remove a level reward"
+   },
+   {
+    "c": "/levels rewards",
     "a": "",
-    "d": "Top 10 most active members"
+    "d": "Show level rewards"
+   },
+   {
+    "c": "/levels ignore",
+    "a": "role?, channel?",
+    "d": "A role or channel that gives no XP (run again to undo)"
+   },
+   {
+    "c": "/levels multiplier",
+    "a": "x, role?, channel?",
+    "d": "More (or less) XP for a role or channel"
+   },
+   {
+    "c": "/levels boost",
+    "a": "minutes, x?",
+    "d": "Double XP event for everyone for a while"
+   },
+   {
+    "c": "/levels give",
+    "a": "user, amount",
+    "d": "Give XP to a member"
+   },
+   {
+    "c": "/levels remove",
+    "a": "user, amount",
+    "d": "Take XP from a member"
+   },
+   {
+    "c": "/levels set",
+    "a": "user, level",
+    "d": "Set a member to an exact level"
+   },
+   {
+    "c": "/levels reset",
+    "a": "user",
+    "d": "Reset one member to level 0"
+   },
+   {
+    "c": "/levels resetall",
+    "a": "confirm",
+    "d": "Delete ALL XP of this server (cannot be undone)"
+   },
+   {
+    "c": "/levels sync",
+    "a": "",
+    "d": "Give/remove reward roles for everyone to match their level"
+   },
+   {
+    "c": "/levels card",
+    "a": "background?, remove?",
+    "d": "Background picture of the /rank card"
    }
   ]
  },
@@ -597,8 +707,33 @@ window.FEATURES = [
   "commands": [
    {
     "c": "/giveaway start",
-    "a": "prize, minutes, winners?, image?, description?, bonus_role?, bonus_entries?, bonus_role2?, bonus_entries2?, bonus_role3?, bonus_entries3?, required_role?, blocked_role?, blocked_role2?",
-    "d": "Start a giveaway in this channel"
+    "a": "prize, duration, winners?, channel?, host?, image?, description?, bonus_role?, bonus_entries?, bonus_role2?, bonus_entries2?, bonus_role3?, bonus_entries3?, required_role?, blocked_role?, blocked_role2?, min_level?, min_messages?, min_invites?, min_account_days?, min_server_days?",
+    "d": "Start a giveaway"
+   },
+   {
+    "c": "/giveaway drop",
+    "a": "prize, channel?, description?, image?, required_role?",
+    "d": "Quick drop: the first person to press the button wins"
+   },
+   {
+    "c": "/giveaway edit",
+    "a": "id, prize?, winners?, duration?, description?",
+    "d": "Change a running giveaway"
+   },
+   {
+    "c": "/giveaway pause",
+    "a": "id",
+    "d": "Pause a giveaway, or continue it if it is paused"
+   },
+   {
+    "c": "/giveaway cancel",
+    "a": "id",
+    "d": "Cancel a giveaway without picking winners"
+   },
+   {
+    "c": "/giveaway list",
+    "a": "",
+    "d": "Show the giveaways that are running"
    },
    {
     "c": "/giveaway bonus",
@@ -627,8 +762,137 @@ window.FEATURES = [
    },
    {
     "c": "/giveaway reroll",
-    "a": "id",
-    "d": "Pick new winners for an ended giveaway"
+    "a": "id, count?",
+    "d": "Pick new winners for an ended giveaway (old winners cannot win again)"
+   }
+  ]
+ },
+ {
+  "id": "tags",
+  "name": "Custom commands",
+  "icon": "sliders",
+  "blurb": "Staff make their own short commands (text, embed, picture). Members use /tag use or the prefix, like !rules.",
+  "commands": [
+   {
+    "c": "/tag use",
+    "a": "name",
+    "d": "Run a custom command"
+   },
+   {
+    "c": "/tag add",
+    "a": "name, text, embed?, title?, color?, image?",
+    "d": "Create or change a custom command (staff)"
+   },
+   {
+    "c": "/tag remove",
+    "a": "name",
+    "d": "Delete a custom command (staff)"
+   },
+   {
+    "c": "/tag list",
+    "a": "",
+    "d": "All custom commands of this server"
+   },
+   {
+    "c": "/tag info",
+    "a": "name",
+    "d": "Details of one custom command"
+   }
+  ]
+ },
+ {
+  "id": "invites",
+  "name": "Invite tracker",
+  "icon": "chart",
+  "blurb": "See who invited whom. Joined, left and fake invites, a top inviters board and {inviter} in welcome messages.",
+  "commands": [
+   {
+    "c": "/invites show",
+    "a": "user?",
+    "d": "Invites of a member"
+   },
+   {
+    "c": "/invites top",
+    "a": "period?",
+    "d": "Top 10 inviters"
+   },
+   {
+    "c": "/invites who",
+    "a": "user",
+    "d": "Who invited this member?"
+   },
+   {
+    "c": "/invites codes",
+    "a": "user?",
+    "d": "Live invite links of a member and how often each was used"
+   },
+   {
+    "c": "/invites bonus",
+    "a": "user, amount",
+    "d": "Give or take away bonus invites (staff)"
+   },
+   {
+    "c": "/invites reset",
+    "a": "user?, all?",
+    "d": "Set someone's invites back to 0 (staff)"
+   },
+   {
+    "c": "/invites reward_add",
+    "a": "invites, role",
+    "d": "Give a role when someone reaches a number of invites (staff)"
+   },
+   {
+    "c": "/invites reward_remove",
+    "a": "invites",
+    "d": "Remove an invite reward (staff)"
+   },
+   {
+    "c": "/invites rewards",
+    "a": "",
+    "d": "List the invite rewards"
+   },
+   {
+    "c": "/invites status",
+    "a": "",
+    "d": "Is the invite tracker working here?"
+   }
+  ]
+ },
+ {
+  "id": "messages",
+  "name": "Message stats",
+  "icon": "chart",
+  "blurb": "See who chats the most: messages per member, per channel and per day, with a server leaderboard.",
+  "commands": [
+   {
+    "c": "/messages show",
+    "a": "user?",
+    "d": "A member's message counts"
+   },
+   {
+    "c": "/messages top",
+    "a": "period?, channel?",
+    "d": "Top 10 chatters"
+   },
+   {
+    "c": "/messages channels",
+    "a": "period?",
+    "d": "The busiest channels"
+   },
+   {
+    "c": "/messages server",
+    "a": "",
+    "d": "How active the whole server is"
+   },
+   {
+    "c": "/messages ignore",
+    "a": "channel?",
+    "d": "Do not count messages in a channel or category (run again to count again) (staff)"
+   },
+   {
+    "c": "/messages reset",
+    "a": "user",
+    "d": "Delete one member's message counts (staff)"
    }
   ]
  },
@@ -750,16 +1014,6 @@ window.FEATURES = [
     "d": "About JARVIS, its creator and links"
    },
    {
-    "c": "/support",
-    "a": "",
-    "d": "Get help in the support server"
-   },
-   {
-    "c": "/ping",
-    "a": "",
-    "d": "Check the bot's speed"
-   },
-   {
     "c": "/avatar",
     "a": "user?",
     "d": "Show someone's avatar"
@@ -804,8 +1058,8 @@ window.FEATURES = [
    },
    {
     "c": "/setup logs",
-    "a": "channel",
-    "d": "Set the moderation/log channel"
+    "a": "channel?, type?, off?",
+    "d": "Server logs: choose where each kind of log goes (no options = show settings)"
    },
    {
     "c": "/setup autorole",
@@ -856,6 +1110,21 @@ window.FEATURES = [
     "c": "/setup vanitypanel",
     "a": "",
     "d": "Post a button members can press to check their vanity status"
+   },
+   {
+    "c": "/setup youtube",
+    "a": "creator, post_in, role?, message?",
+    "d": "Announce new videos of a YouTube channel"
+   },
+   {
+    "c": "/setup twitch",
+    "a": "streamer, post_in, role?, message?",
+    "d": "Announce when a Twitch streamer goes live"
+   },
+   {
+    "c": "/setup notifications",
+    "a": "action?, id?",
+    "d": "List, test or remove YouTube/Twitch notifications"
    },
    {
     "c": "/rolepanel",
@@ -977,21 +1246,6 @@ window.FEATURES = [
     "c": "/verify",
     "a": "role, text?, mode?",
     "d": "Post a verification button (members click to get a role)"
-   },
-   {
-    "c": "/levelrole add",
-    "a": "level, role",
-    "d": "Give a role at a level"
-   },
-   {
-    "c": "/levelrole remove",
-    "a": "level",
-    "d": "Remove a level reward"
-   },
-   {
-    "c": "/levelrole list",
-    "a": "",
-    "d": "Show level rewards"
    },
    {
     "c": "/snipe",

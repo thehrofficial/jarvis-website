@@ -31,7 +31,7 @@
 
   /* ---------- shared header / footer ---------- */
   const page = location.pathname.split('/').pop() || 'index.html';
-  const nav = [['index.html#features', 'Features'], ['commands.html', 'Commands'], ['index.html#showcase', 'Showcase'], ['guide.html', 'Guide'], ['index.html#setup', 'Setup'], ['index.html#faq', 'FAQ']];
+  const nav = [['index.html#features', 'Features'], ['commands.html', 'Commands'], ['index.html#showcase', 'Showcase'], ['guide.html', 'Guide'], ['changelog.html', 'Changelog'], ['index.html#setup', 'Setup'], ['index.html#faq', 'FAQ']];
   const hdr = $('#site-header');
   if (hdr) hdr.outerHTML = `<header class="site-header"><div class="wrap">
     <a class="brand" href="index.html"><img src="assets/favicon.png" alt="" width="38" height="38"><span>${B.name}</span></a>
@@ -40,7 +40,7 @@
     <button class="menu-btn" id="menu" aria-label="Menu">☰</button></div></header>`;
   const ftr = $('#site-footer');
   if (ftr) ftr.outerHTML = `<footer class="site-footer"><div class="wrap"><div class="links">
-    <a href="index.html">Home</a><a href="commands.html">Commands</a><a href="guide.html">Guide</a><a href="ai-key.html">AI key</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
+    <a href="index.html">Home</a><a href="commands.html">Commands</a><a href="guide.html">Guide</a><a href="changelog.html">Changelog</a><a href="ai-key.html">AI key</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
     ${B.supportServer ? `<a href="${B.supportServer}" target="_blank" rel="noopener">Support server</a>` : ''}</div>
     <p class="legal">&copy; ${new Date().getFullYear()} ${B.name}. Not affiliated with or endorsed by Discord Inc.</p></div></footer>`;
   document.addEventListener('click', (e) => { if (e.target.id === 'menu') $('#nav').classList.toggle('open'); else if (e.target.closest('#nav a')) $('#nav')?.classList.remove('open'); });
@@ -145,7 +145,7 @@
       li: ['Pick an AI channel and JARVIS chats with everyone there', 'Or mention it anywhere, or use /ask', 'Change its personality with /ai persona', 'Auto replies: when someone says a word, the bot answers automatically'],
       ch: '#ai-chat', m: U('Sam', 'bhai python me list reverse kaise karte hain?') + BOT('<code>my_list.reverse()</code> ya <code>my_list[::-1]</code>. Easy hai! 😎') + U('Riya', 'where is the rules channel?') + BOT('Check <b>#rules</b>, it is pinned at the top! 📌') },
     { ic: 'chart', t: 'Levels & economy', p: 'Give members a reason to stay active.',
-      li: ['XP for chatting, /rank, /leaderboard', 'Level rewards: give a role at a level with /levelrole', 'Coins: /daily, /work, /pay, /gamble, /slots, /rob', 'A role shop where admins set the prices'],
+      li: ['XP for chatting, /rank, /leaderboard', 'Level rewards, voice XP, XP multipliers and boosts with /levels', 'Coins: /daily, /work, /pay, /gamble, /slots, /rob', 'A role shop where admins set the prices'],
       ch: '#bot-commands', m: BOT('<div class="embed"><h4>⭐ Riya</h4><p>Level <b>12</b> • Rank <b>#3</b><br>XP 14,420 / 16,900</p><div class="bar"><i style="animation:none;width:72%"></i></div></div>') + BOT('<div class="embed" style="border-color:#fee75c"><h4>🎰 Slots</h4><p><b>💎 | 💎 | 💎</b><br>You won 🪙 600!</p></div>') },
     { ic: 'users', t: 'Welcome, roles & verification', p: 'Make a great first impression and keep servers organised.',
       li: ['Welcome and goodbye messages with your own text', 'Autorole, role panels with buttons, and a verification button', 'Vanity role: members get a role while your server link is in their status', 'Temp voice: join a channel to get your own room'],

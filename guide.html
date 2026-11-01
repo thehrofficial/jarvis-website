@@ -41,23 +41,37 @@
 <li><code>/ticket addtype</code>: add a ticket type with its own emoji, description, category and welcome text. Change it later with <code>/ticket edittype</code>.</li>
 <li><code>/ticket panel</code>: sends the panel with the buttons or dropdown. It updates by itself when you change something.</li>
 <li>Button colour: <code>color:</code> in <code>/ticket setup</code> (all buttons) or in <code>/ticket addtype</code> / <code>/ticket edittype</code> (one type). Blue, grey, green or red. Colours need <code>style:Buttons</code>; a dropdown has none.</li>
-<li>Only staff can close a ticket. Members cannot.</li>
+<li>Ask people questions before the ticket opens: <code>/ticket questions type:Support q1:What is wrong?</code>. Several panels: <code>/ticket panel types:Support, Report</code>.</li>
+<li>Staff: <code>/ticket closerequest</code> asks if the problem is solved, <code>/ticket transfer</code>, <code>/ticket list</code>, <code>/ticket stats</code> (reply time, ratings). After closing, the member can rate with 1-5 stars by DM.</li>
+<li><code>/ticket config</code> sets the channel name, staff ping, rating, and whether members can close their own ticket. <code>/ticket blacklist</code> blocks someone.</li>
 </ol>
 
 <h2>4. Levels</h2>
 <ol>
 <li><code>/setup levels enabled:true channel:#levels</code>.</li>
 <li>Write your own level-up text with <b>message</b> (use <code>{user}</code> <code>{level}</code> <code>{server}</code>) and your own picture with <b>background</b>.</li>
-<li>Press <b>test</b> to see the card. Give roles at a level with <code>/levelrole add</code>.</li>
+<li>Press <b>test</b> to see the card. Give roles at a level with <code>/levels addreward</code>.</li>
+<li><code>/levels settings</code> changes XP per message, cooldown and voice XP. <code>/levels multiplier</code> gives a role or channel more XP, <code>/levels boost</code> starts a double XP event, <code>/levels ignore</code> removes XP from a role or channel.</li>
+<li>Members get a picture card with <code>/rank</code> and can pick its colour: <code>/rank color:#ff7a00</code>.</li>
 </ol>
 
 <h2>5. Giveaways</h2>
 <ol>
-<li><code>/giveaway start prize:Nitro minutes:60 winners:1</code>.</li>
+<li><code>/giveaway start prize:Nitro duration:1h winners:1</code> (time like <code>30m</code>, <code>2h</code>, <code>1d12h</code>). Requirements: level, messages, invites, account age, days in server.</li>
+<li><code>/giveaway drop prize:</code> = the first person to press the button wins. Also <code>edit</code>, <code>pause</code>, <code>cancel</code>, <code>list</code>. Winners get a DM.</li>
 <li>Add a picture with <b>image</b> (PNG, JPG, GIF or WEBP) and rules or sponsor text with <b>description</b>.</li>
 <li><code>/giveaway end id:</code> ends it now, <code>/giveaway reroll id:</code> picks new winners. The ID is in the giveaway footer.</li>
 <li><b>Extra entries by role:</b> up to 3 roles with <b>bonus_role</b> + <b>bonus_entries</b> (for example Booster +2, Donator +3, they add up). <b>required_role</b> lets only that role enter and <b>blocked_role</b> keeps a role out. Change them later with <code>/giveaway bonus</code> and <code>/giveaway block</code>.</li>
 <li><code>/giveaway entries id:</code> shows who joined, <code>/giveaway remove id: user:</code> removes someone. Members can press the <b>Entries</b> button to see who joined.</li>
+</ol>
+
+<h2>Logs, automod, custom commands and invites</h2>
+<ol>
+<li><b>Logs:</b> <code>/setup logs channel:#logs</code> sends everything to one channel. To split them: <code>/setup logs type:messages channel:#msg-logs</code> (also <b>members</b>, <b>server</b>, <b>voice</b>, <b>moderation</b>). Switch one off with <code>off:true</code>. Run <code>/setup logs</code> alone to see where each log goes. Give the bot <b>View Audit Log</b> so logs say who did it.</li>
+<li><b>Automod:</b> <code>/automod status</code> opens a panel. Press <b>Light</b>, <b>Standard</b> or <b>Strict</b>, or pick rules in the menu. <b>Add starter bad-word list</b> adds common swear words in one click. Staff are ignored (use another account to test).</li>
+<li><b>Custom commands:</b> <code>/tag add name:rules text:Be kind! embed:true</code>. Everybody uses <code>/tag use name:rules</code> or <code>!rules</code>. <code>/tag list</code> shows all.</li>
+<li><b>Invite tracker:</b> <code>/invites show</code>, <code>/invites top</code>, <code>/invites who user:</code>. Needs <b>Manage Server</b> for the bot. Use <code>{inviter}</code> in welcome texts.</li>
+<li><b>Most active:</b> <code>/leaderboard type:messages period:week</code> (also <b>levels</b> and <b>invites</b>).</li>
 </ol>
 
 <h2>Birthdays, role panels and more</h2>
@@ -96,9 +110,17 @@
 <h2>8. Moderation and safety</h2>
 <ul>
 <li><code>/automod status</code> shows spam, invite and bad-word protection. Turn parts on or off there.</li>
-<li><code>/antinuke</code> and <code>/antiraid</code> protect against mass bans and raids.</li>
+<li><code>/antinuke enable</code> protects against mass bans and deletes: the nuker is punished, deleted channels and roles are restored. <code>/antinuke preset</code> picks light / standard / strict. Put the bot role at the <b>top</b>.</li>
+<li><code>/antiraid enable</code> stops mass-joins. <code>/antiraid lockdown minutes:10</code> kicks all new joiners during an attack.</li>
 <li><code>/setup logs</code> sets the log channel. <code>/warn</code>, <code>/timeout</code>, <code>/kick</code> and <code>/ban</code> do what they say.</li>
 </ul>
+
+<h2>YouTube and Twitch alerts</h2>
+<ol>
+<li><code>/setup youtube creator:youtube.com/@name post_in:#videos role:@Fans</code> announces new videos (no key needed).</li>
+<li><code>/setup twitch streamer:name post_in:#live</code> announces when they go live. The bot owner must add a free Twitch app key first.</li>
+<li><code>/setup notifications</code> lists them. Use <code>action:test</code> to see a sample, <code>action:remove</code> to delete.</li>
+</ol>
 
 <h2>Voice rooms</h2>
 <ol>
