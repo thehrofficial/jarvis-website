@@ -179,8 +179,8 @@ window.FEATURES = [
    },
    {
     "c": "/antinuke limit",
-    "a": "action, amount",
-    "d": "Change how many actions are allowed per minute"
+    "a": "action, amount?, seconds?, punishment?",
+    "d": "For one action: how many are allowed, in how much time, and what happens after"
    },
    {
     "c": "/antinuke preset",
@@ -505,6 +505,11 @@ window.FEATURES = [
     "c": "/ai keyhelp",
     "a": "",
     "d": "How to get a free AI key and add it"
+   },
+   {
+    "c": "/ai ignore",
+    "a": "action, channel?, channels?",
+    "d": "Turn the AI fully OFF in channels or categories (no limit)"
    },
    {
     "c": "/ai status",
@@ -961,11 +966,6 @@ window.FEATURES = [
     "d": "Let the bot choose for you"
    },
    {
-    "c": "/rate",
-    "a": "thing",
-    "d": "Rate anything out of 10"
-   },
-   {
     "c": "/joke",
     "a": "",
     "d": "Hear a (nerdy) joke"
@@ -989,6 +989,19 @@ window.FEATURES = [
     "c": "/minigame trivia",
     "a": "",
     "d": "Answer a question within 20 seconds and win coins"
+   }
+  ]
+ },
+ {
+  "id": "interact",
+  "name": "Anime reactions",
+  "icon": "star",
+  "blurb": "Kiss, hug, pat, love, slap, cuddle and more than 30 other anime GIFs, live from a GIF library. Use /interact or just type .kiss @someone. The other person can press a \"back\" button.",
+  "commands": [
+   {
+    "c": "/interact",
+    "a": "action, user?",
+    "d": "Send an anime reaction GIF: kiss, hug, pat, love, slap and 40 more"
    }
   ]
  },
@@ -1120,6 +1133,11 @@ window.FEATURES = [
     "c": "/setup twitch",
     "a": "streamer, post_in, role?, message?",
     "d": "Announce when a Twitch streamer goes live"
+   },
+   {
+    "c": "/setup leaderboard",
+    "a": "channel?, daily?, weekly?, monthly?, show?, ping?, off?, preview?",
+    "d": "Post a daily, weekly and monthly leaderboard automatically"
    },
    {
     "c": "/setup notifications",
@@ -1274,7 +1292,7 @@ window.FEATURES = [
    },
    {
     "c": "/role",
-    "a": "action, user, role",
+    "a": "action, user, role, duration?",
     "d": "Add or remove a role from a member"
    },
    {

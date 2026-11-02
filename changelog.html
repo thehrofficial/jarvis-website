@@ -19,6 +19,40 @@
 <main class="wrap doc">
 <h1>Changelog</h1>
 <p>What changed in JARVIS, newest first. If something here does not work for you, tell us in the support server.</p>
+<h2 id="v5.5.0">5.5.0 <span class="tag">Reactions, welcome DM, leaderboards</span></h2>
+<p>A fun and polish update.</p>
+<h3>Anime reactions</h3>
+<ul>
+<li>Use <code>/interact</code> or just type <code>.kiss @someone</code>, <code>.hug</code>, <code>.pat</code>, <code>.love</code>, <code>.slap</code>, <code>.cuddle</code>, <code>.poke</code>, <code>.bite</code>, <code>.highfive</code>, <code>.wave</code> and more than 30 others like <code>.cry</code>, <code>.dance</code>, <code>.blush</code> and <code>.laugh</code>.</li>
+<li>The GIFs are fetched live from a large GIF library, so there are thousands of them and the same one rarely shows twice. They are all high quality and made for this.</li>
+<li>The person you targeted gets a button like <b>Kiss back</b>. Only they can press it.</li>
+<li>The footer shows how many times you did it to each other ("Kiss #3 between you two") and which anime the GIF is from.</li>
+<li>Actions that need a person (like kiss) ask you to pick one. Actions like cry or dance work alone and with someone.</li>
+</ul>
+<h3>Welcome message in DM</h3>
+<ul>
+<li>When someone adds JARVIS to their server, they get a thank-you DM: the prefix, how to see all commands, a quick start and buttons for the Support server and the Website.</li>
+<li>If you gave the bot its own server profile (name, picture, banner), the DM uses that. Otherwise the normal JARVIS look.</li>
+<li>If you add the bot without being able to view the audit log, the server owner gets the DM instead.</li>
+</ul>
+<h3>Leaderboards</h3>
+<ul>
+<li>Every row has a progress bar compared to the leader, the server icon is on top, and there is a dropdown to switch between today, last 7 days, last 30 days and all time.</li>
+<li>Messages and invites leaderboards use the same style. The automatic daily, weekly and monthly boards show the server icon too.</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li><code>/rate</code> was removed to make room for <code>/interact</code> (Discord allows only 100 slash commands per bot).</li>
+</ul>
+<h2 id="v5.4.0">5.4.0 <span class="tag">Logs, leaderboards, safety</span></h2>
+<ul>
+<li>Antinuke is now fully adjustable: <code>/antinuke limit</code> sets how many channel deletes, role deletes, bans and more are allowed, in how many seconds, and whether the person is banned, kicked, stripped of roles or timed out.</li>
+<li>Message logs show every message of a bulk delete (plus a text file) and a preview of deleted images.</li>
+<li>Ticket transcripts come as a readable text file and a chat preview, not only a download.</li>
+<li>Daily, weekly and monthly leaderboards can post themselves: <code>/setup leaderboard</code>.</li>
+<li>Roles for a limited time: <code>/role add duration:7d</code>. Leave it empty for a permanent role.</li>
+<li>Switch the AI off in as many channels or categories as you like: <code>/ai ignore</code>.</li>
+</ul>
 <h2 id="v5.3.0">5.3.0 <span class="tag">Levels</span></h2>
 <ul>
 <li><code>/rank</code> is now a picture card with your avatar, rank, level and XP bar. Pick your own colour with <code>/rank color:#ff7a00</code>.</li>
