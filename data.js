@@ -302,7 +302,7 @@ window.FEATURES = [
    },
    {
     "c": "/ticket questions",
-    "a": "type, q1?, q2?, q3?, q4?, q5?",
+    "a": "type?, q1?, q2?, q3?, q4?, q5?",
     "d": "Questions people answer before a ticket opens (admin)"
    },
    {
@@ -951,11 +951,6 @@ window.FEATURES = [
     "d": "Let the bot choose for you"
    },
    {
-    "c": "/joke",
-    "a": "",
-    "d": "Hear a (nerdy) joke"
-   },
-   {
     "c": "/poll",
     "a": "question, options?, minutes?, multiple?, show_names?, role?",
     "d": "Create a poll with buttons, live results and a timer"
@@ -1058,6 +1053,19 @@ window.FEATURES = [
     "c": "/emoji remove",
     "a": "emoji",
     "d": "Delete an emoji of this server"
+   }
+  ]
+ },
+ {
+  "id": "random",
+  "name": "Random",
+  "icon": "gamepad",
+  "blurb": "A random meme, joke, fun fact, cat or dog with an \"Another one\" button.",
+  "commands": [
+   {
+    "c": "/random",
+    "a": "type, subreddit?",
+    "d": "A random meme, joke, fun fact, cat or dog"
    }
   ]
  },
@@ -1169,6 +1177,21 @@ window.FEATURES = [
     "c": "/setup panel",
     "a": "",
     "d": "One panel: see what is set up and change channels with menus"
+   },
+   {
+    "c": "/setup wizard",
+    "a": "",
+    "d": "Guided setup in 5 quick steps (welcome, logs, role, protection, extras)"
+   },
+   {
+    "c": "/setup backup",
+    "a": "action, id?",
+    "d": "Save or restore the roles and channels of this server"
+   },
+   {
+    "c": "/setup sticky",
+    "a": "action, channel?, text?, embed?, title?, color?, every?",
+    "d": "A message that always stays at the bottom of a channel"
    },
    {
     "c": "/setup emojis",
@@ -1370,13 +1393,8 @@ window.FEATURES = [
     "c": "/ship",
     "a": "first, second?",
     "d": "How well do two people match?"
-   },
-   {
-    "c": "/fact",
-    "a": "",
-    "d": "A random fun fact"
    }
   ]
  }
 ];
-window.COMMAND_COUNT = 100;
+window.COMMAND_COUNT = 99;
