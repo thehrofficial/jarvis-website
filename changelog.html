@@ -19,6 +19,36 @@
 <main class="wrap doc">
 <h1>Changelog</h1>
 <p>What changed in JARVIS, newest first. If something here does not work for you, tell us in the support server.</p>
+<h2 id="v5.7.0">5.7.0 <span class="tag">Emoji stealer, /channel, simpler AI</span></h2>
+<h3>Emoji and sticker stealer</h3>
+<ul>
+<li><code>/emoji add</code> copies emojis into your server. Paste one or many emojis from any server, an image link, or upload a file.</li>
+<li><code>/emoji sticker</code> copies a sticker from a message link or from a file.</li>
+<li>Faster: reply to any message with <code>!steal</code> and its emojis and stickers are added.</li>
+<li>Also <code>/emoji big</code> (full size picture), <code>/emoji list</code> and <code>/emoji remove</code>. You need the Manage Expressions permission.</li>
+</ul>
+<h3>/channel</h3>
+<ul>
+<li>One command for <code>lock</code>, <code>unlock</code>, <code>lockall</code>, <code>unlockall</code>, <code>hide</code> and <code>show</code>.</li>
+<li><code>lockall</code> locks every text channel (or only one category). <code>unlockall</code> opens only the channels it locked, so channels you locked on purpose stay locked.</li>
+<li><code>!lock</code> and <code>!unlock</code> still work.</li>
+</ul>
+<h3>AI</h3>
+<ul>
+<li>The AI now talks only in the channels you choose with <code>/ai channel</code>. Nowhere else, not even when someone pings it. No channel chosen means the AI is off in your server.</li>
+</ul>
+<h3>Better lists and fixes</h3>
+<ul>
+<li>Invite and message profiles show bars, avatars, how many invited people are still in the server, the next reward and recent numbers.</li>
+<li>Emoji swaps no longer change the emojis you type in <code>/embed</code>, <code>/say</code>, custom commands, auto replies and welcome messages.</li>
+<li><code>/antinuke limit</code> without options lists all limits.</li>
+<li><code>/lock</code> and <code>/unlock</code> moved into <code>/channel</code>.</li>
+</ul>
+<h2 id="v5.6.0">5.6.0 <span class="tag">GIF fix, new help</span></h2>
+<ul>
+<li>Anime reaction GIFs now use four GIF sites, so one failing site no longer means no GIF.</li>
+<li><code>/help</code> has a cleaner category list with counts, and <code>/help command:ban</code> shows how to use one command.</li>
+</ul>
 <h2 id="v5.5.0">5.5.0 <span class="tag">Reactions, welcome DM, leaderboards</span></h2>
 <p>A fun and polish update.</p>
 <h3>Anime reactions</h3>

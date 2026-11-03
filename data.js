@@ -70,16 +70,6 @@ window.FEATURES = [
     "c": "/slowmode",
     "a": "seconds",
     "d": "Set slowmode for this channel"
-   },
-   {
-    "c": "/lock",
-    "a": "channel?, reason?",
-    "d": "Stop everyone from sending messages in a channel"
-   },
-   {
-    "c": "/unlock",
-    "a": "channel?",
-    "d": "Let everyone send messages in a channel again"
    }
   ]
  },
@@ -179,7 +169,7 @@ window.FEATURES = [
    },
    {
     "c": "/antinuke limit",
-    "a": "action, amount?, seconds?, punishment?",
+    "a": "action?, amount?, seconds?, punishment?",
     "d": "For one action: how many are allowed, in how much time, and what happens after"
    },
    {
@@ -463,8 +453,8 @@ window.FEATURES = [
    },
    {
     "c": "/ai channel",
-    "a": "channel?",
-    "d": "The bot replies to every message in this channel"
+    "a": "channel?, off?",
+    "d": "Pick where the AI talks. Run again on the same channel to turn it off there"
    },
    {
     "c": "/ai persona",
@@ -505,11 +495,6 @@ window.FEATURES = [
     "c": "/ai keyhelp",
     "a": "",
     "d": "How to get a free AI key and add it"
-   },
-   {
-    "c": "/ai ignore",
-    "a": "action, channel?, channels?",
-    "d": "Turn the AI fully OFF in channels or categories (no limit)"
    },
    {
     "c": "/ai status",
@@ -1006,6 +991,77 @@ window.FEATURES = [
   ]
  },
  {
+  "id": "channel",
+  "name": "Channel tools",
+  "icon": "lock",
+  "blurb": "Lock, unlock, hide or show one channel, or lock the whole server (or one category) in one go, for raids and events.",
+  "commands": [
+   {
+    "c": "/channel lock",
+    "a": "channel?, reason?",
+    "d": "Nobody can write in a channel"
+   },
+   {
+    "c": "/channel unlock",
+    "a": "channel?",
+    "d": "Let everyone write in a channel again"
+   },
+   {
+    "c": "/channel lockall",
+    "a": "category?, reason?",
+    "d": "Lock EVERY text channel of the server (for raids or events)"
+   },
+   {
+    "c": "/channel unlockall",
+    "a": "category?",
+    "d": "Open every channel that /channel lockall locked"
+   },
+   {
+    "c": "/channel hide",
+    "a": "channel?",
+    "d": "Hide a channel from everyone"
+   },
+   {
+    "c": "/channel show",
+    "a": "channel?",
+    "d": "Show a hidden channel again"
+   }
+  ]
+ },
+ {
+  "id": "emoji",
+  "name": "Emoji stealer",
+  "icon": "star",
+  "blurb": "Copy emojis and stickers from other servers into yours with /emoji add, /emoji sticker or by replying !steal.",
+  "commands": [
+   {
+    "c": "/emoji add",
+    "a": "emoji?, name?, file?",
+    "d": "Copy emojis into this server (from other servers, a link or a file)"
+   },
+   {
+    "c": "/emoji sticker",
+    "a": "message?, file?, name?, tags?",
+    "d": "Copy a sticker into this server"
+   },
+   {
+    "c": "/emoji big",
+    "a": "emoji",
+    "d": "Show an emoji in full size"
+   },
+   {
+    "c": "/emoji list",
+    "a": "",
+    "d": "All emojis of this server"
+   },
+   {
+    "c": "/emoji remove",
+    "a": "emoji",
+    "d": "Delete an emoji of this server"
+   }
+  ]
+ },
+ {
   "id": "utility",
   "name": "Utility",
   "icon": "sliders",
@@ -1018,8 +1074,8 @@ window.FEATURES = [
    },
    {
     "c": "/help",
-    "a": "",
-    "d": "Browse every command by category"
+    "a": "command?",
+    "d": "Browse every command by category, or look up one command"
    },
    {
     "c": "/about",
