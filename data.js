@@ -4,7 +4,7 @@ window.FEATURES = [
   "id": "moderation",
   "name": "Moderation",
   "icon": "shield",
-  "blurb": "Numbered cases, mod history, warns, temp-bans, softban, timeouts with easy durations and DM notices. Every action checks role hierarchy and is logged.",
+  "blurb": "Warns, timeouts, bans, temp-bans and a log of every case. The bot checks role order first so it cannot be used to go above someone.",
   "commands": [
    {
     "c": "/kick",
@@ -77,7 +77,7 @@ window.FEATURES = [
   "id": "automod",
   "name": "Automod",
   "icon": "zap",
-  "blurb": "A panel with one-click Light / Standard / Strict, a starter bad-word list, and rules for spam, caps, links, invites, mentions and emoji. Staff are never touched.",
+  "blurb": "Deletes spam, repeated text, invite links, mass mentions and banned words. One click picks Light, Standard or Strict. Staff are skipped.",
   "commands": [
    {
     "c": "/automod status",
@@ -150,7 +150,7 @@ window.FEATURES = [
   "id": "antinuke",
   "name": "Antinuke & Anti-raid",
   "icon": "lock",
-  "blurb": "Stops nukers and compromised admins: mass deletes, bans and kicks are punished in seconds. Raid shield for join floods.",
+  "blurb": "Stops people who delete channels or ban in bulk. You set the limits and the punishment, and deleted channels and roles are put back.",
   "commands": [
    {
     "c": "/antinuke enable",
@@ -218,37 +218,37 @@ window.FEATURES = [
   "id": "tickets",
   "name": "Tickets",
   "icon": "ticket",
-  "blurb": "One-step setup with up to 3 staff roles, panel and ticket pictures, ticket types as buttons, staff-only close, claim, priority, auto-close and full HTML transcripts.",
+  "blurb": "Members open a ticket from a button or menu, staff claim and close it, and a transcript is saved. You can change the form or turn it off.",
   "commands": [
    {
     "c": "/ticket setup",
-    "a": "staff_role, staff_role2?, staff_role3?, style?, color?, panel_image?, ticket_image?, panel_channel?, category?, log_channel?, max_per_user?, auto_close_hours?, title?, description?",
+    "a": "staff_role, staff_role2?, staff_role3?, style?, color?, panel_image?, ticket_image?, panel_channel?, category?, log_channel?, max_per_user?, auto_close_hours?, title?, remove_images?, description?",
     "d": "Set up tickets in one step and post the panel (admin)"
    },
    {
     "c": "/ticket addtype",
     "a": "name, emoji?, description?, color?, category?, role?, welcome?",
-    "d": "Add a ticket type like Support, Report, Buy (admin)"
+    "d": "Advanced: Add a ticket type like Support, Report, Buy (admin)"
    },
    {
     "c": "/ticket edittype",
     "a": "name, new_name?, emoji?, description?, color?, category?, role?, welcome?",
-    "d": "Change a ticket type (admin)"
+    "d": "Advanced: Change a ticket type (admin)"
    },
    {
     "c": "/ticket panel",
     "a": "channel?, types?, title?, description?",
-    "d": "Post a ticket panel (admin). You can post several, each with its own types"
+    "d": "Advanced: Post a ticket panel (admin). You can post several, each with its own types"
    },
    {
     "c": "/ticket removetype",
     "a": "name",
-    "d": "Remove a ticket type (admin)"
+    "d": "Advanced: Remove a ticket type (admin)"
    },
    {
     "c": "/ticket types",
     "a": "",
-    "d": "List ticket types and current settings"
+    "d": "Advanced: List ticket types and current settings"
    },
    {
     "c": "/ticket close",
@@ -273,47 +273,47 @@ window.FEATURES = [
    {
     "c": "/ticket rename",
     "a": "name",
-    "d": "Rename this ticket (staff)"
+    "d": "Advanced: Rename this ticket (staff)"
    },
    {
     "c": "/ticket priority",
     "a": "level",
-    "d": "Set the priority (staff)"
+    "d": "Advanced: Set the priority (staff)"
    },
    {
     "c": "/ticket stats",
     "a": "staff?",
-    "d": "Ticket statistics: response time, ratings, top staff (staff)"
+    "d": "Advanced: Ticket statistics: response time, ratings, top staff (staff)"
    },
    {
     "c": "/ticket list",
     "a": "",
-    "d": "Open tickets right now (staff)"
+    "d": "Advanced: Open tickets right now (staff)"
    },
    {
     "c": "/ticket transfer",
     "a": "user",
-    "d": "Give this ticket to another staff member (staff)"
+    "d": "Advanced: Give this ticket to another staff member (staff)"
    },
    {
     "c": "/ticket closerequest",
     "a": "reason?",
-    "d": "Ask the member if their problem is solved (staff)"
+    "d": "Advanced: Ask the member if their problem is solved (staff)"
    },
    {
     "c": "/ticket questions",
     "a": "type?, q1?, q2?, q3?, q4?, q5?",
-    "d": "Questions people answer before a ticket opens (admin)"
+    "d": "Advanced: Questions people answer before a ticket opens (admin)"
    },
    {
     "c": "/ticket blacklist",
     "a": "action, user?",
-    "d": "Stop someone from opening tickets (admin)"
+    "d": "Advanced: Stop someone from opening tickets (admin)"
    },
    {
     "c": "/ticket config",
     "a": "name_format?, ping_staff?, user_can_close?, rating?, close_on_leave?, max_per_user?, auto_close_hours?",
-    "d": "Ticket settings (admin). No options = show current settings"
+    "d": "Advanced: Ticket settings (admin). No options = show current settings"
    }
   ]
  },
@@ -321,7 +321,7 @@ window.FEATURES = [
   "id": "music",
   "name": "Music",
   "icon": "music",
-  "blurb": "SoundCloud, Spotify songs/albums/playlists and mp3s. Player buttons, 12 audio effects, queue tools and 24/7 voice mode.",
+  "blurb": "Plays from SoundCloud, Spotify links and direct links, with a player panel, a queue, 12 effects and a 24/7 mode.",
   "commands": [
    {
     "c": "/play",
@@ -444,7 +444,7 @@ window.FEATURES = [
   "id": "ai",
   "name": "AI & Auto replies",
   "icon": "bot",
-  "blurb": "Chat with an AI in a channel or with /ask, teach it many facts at once, and set automatic replies to words.",
+  "blurb": "Chats in the channels you choose and knows how the bot works. You can teach it facts about your server.",
   "commands": [
    {
     "c": "/ask",
@@ -522,7 +522,7 @@ window.FEATURES = [
   "id": "economy",
   "name": "Economy",
   "icon": "wallet",
-  "blurb": "Wallet and bank, daily streaks, work, blackjack, slots, a role shop with emojis and profile cards.",
+  "blurb": "Coins, a bank, daily rewards, work, blackjack, slots and a shop that can sell roles.",
   "commands": [
    {
     "c": "/balance",
@@ -605,7 +605,7 @@ window.FEATURES = [
   "id": "levels",
   "name": "Levels",
   "icon": "chart",
-  "blurb": "XP for chatting, rank cards, leaderboards and roles you unlock at levels.",
+  "blurb": "XP for chatting, a rank card, leaderboards and roles you unlock at certain levels.",
   "commands": [
    {
     "c": "/rank",
@@ -693,7 +693,7 @@ window.FEATURES = [
   "id": "giveaway",
   "name": "Giveaways",
   "icon": "gift",
-  "blurb": "Start giveaways with images, bonus-role entries and required roles. See who joined, remove or add entries, reroll.",
+  "blurb": "Giveaways with requirements, bonus entries, drops, rerolls and a DM to the winners.",
   "commands": [
    {
     "c": "/giveaway start",
@@ -761,7 +761,7 @@ window.FEATURES = [
   "id": "tags",
   "name": "Custom commands",
   "icon": "sliders",
-  "blurb": "Staff make their own short commands (text, embed, picture). Members use /tag use or the prefix, like !rules.",
+  "blurb": "Short custom commands your staff write, like !rules.",
   "commands": [
    {
     "c": "/tag use",
@@ -794,7 +794,7 @@ window.FEATURES = [
   "id": "invites",
   "name": "Invite tracker",
   "icon": "chart",
-  "blurb": "See who invited whom. Joined, left and fake invites, a top inviters board and {inviter} in welcome messages.",
+  "blurb": "Shows who invited whom, with joined, left and fake counts and a top list.",
   "commands": [
    {
     "c": "/invites show",
@@ -852,7 +852,7 @@ window.FEATURES = [
   "id": "messages",
   "name": "Message stats",
   "icon": "chart",
-  "blurb": "See who chats the most: messages per member, per channel and per day, with a server leaderboard.",
+  "blurb": "Counts messages per person, channel and day, with a top list.",
   "commands": [
    {
     "c": "/messages show",
@@ -890,7 +890,7 @@ window.FEATURES = [
   "id": "birthday",
   "name": "Birthdays",
   "icon": "gift",
-  "blurb": "Members save their birthday; the bot wishes them daily and can give a birthday role.",
+  "blurb": "Members save a birthday, the bot wishes them and can give a role for the day.",
   "commands": [
    {
     "c": "/birthday set",
@@ -923,7 +923,7 @@ window.FEATURES = [
   "id": "fun",
   "name": "Fun",
   "icon": "gamepad",
-  "blurb": "Games, jokes, polls, trivia for coins and tic-tac-toe with friends.",
+  "blurb": "Games, polls, trivia and tic-tac-toe.",
   "commands": [
    {
     "c": "/8ball",
@@ -976,7 +976,7 @@ window.FEATURES = [
   "id": "interact",
   "name": "Anime reactions",
   "icon": "star",
-  "blurb": "Kiss, hug, pat, love, slap, cuddle and more than 30 other anime GIFs, live from a GIF library. Use /interact or just type .kiss @someone. The other person can press a \"back\" button.",
+  "blurb": "Anime GIF reactions like kiss, hug, pat and love. Use /interact or type .kiss @someone.",
   "commands": [
    {
     "c": "/interact",
@@ -989,7 +989,7 @@ window.FEATURES = [
   "id": "channel",
   "name": "Channel tools",
   "icon": "lock",
-  "blurb": "Lock, unlock, hide or show one channel, or lock the whole server (or one category) in one go, for raids and events.",
+  "blurb": "Lock, unlock, hide or show a channel, or lock the whole server (or one category) in one go.",
   "commands": [
    {
     "c": "/channel lock",
@@ -1027,7 +1027,7 @@ window.FEATURES = [
   "id": "emoji",
   "name": "Emoji stealer",
   "icon": "star",
-  "blurb": "Copy emojis and stickers from other servers into yours with /emoji add, /emoji sticker or by replying !steal.",
+  "blurb": "Copy emojis and stickers from other servers with /emoji add, /emoji sticker or by replying !steal.",
   "commands": [
    {
     "c": "/emoji add",
@@ -1060,7 +1060,7 @@ window.FEATURES = [
   "id": "random",
   "name": "Random",
   "icon": "gamepad",
-  "blurb": "A random meme, joke, fun fact, cat or dog with an \"Another one\" button.",
+  "blurb": "A random meme, joke, fun fact, cat or dog.",
   "commands": [
    {
     "c": "/random",
@@ -1073,7 +1073,7 @@ window.FEATURES = [
   "id": "utility",
   "name": "Utility",
   "icon": "sliders",
-  "blurb": "Info commands, avatars, server and user details.",
+  "blurb": "Avatars, user and server info and other small tools.",
   "commands": [
    {
     "c": "/invite",
@@ -1111,7 +1111,7 @@ window.FEATURES = [
   "id": "setup",
   "name": "Server setup",
   "icon": "sliders",
-  "blurb": "Welcome and goodbye messages with title and banner image, logs, autorole, vanity role, role panels and the text-command prefix.",
+  "blurb": "Welcome and goodbye messages, logs, autorole, role panels, sticky messages, backups and a guided setup.",
   "commands": [
    {
     "c": "/prefix",
@@ -1234,7 +1234,7 @@ window.FEATURES = [
   "id": "voice",
   "name": "Voice rooms",
   "icon": "mic",
-  "blurb": "Join-to-create voice rooms. Everyone gets their own room with a button panel: lock, hide, rename, set a limit, claim.",
+  "blurb": "Join a channel to get your own voice room with buttons to lock, rename or limit it.",
   "commands": [
    {
     "c": "/voice setup",
@@ -1297,7 +1297,7 @@ window.FEATURES = [
   "id": "extras",
   "name": "More tools",
   "icon": "star",
-  "blurb": "AFK, reminders, suggestions, starboard, temp voice, verification, snipe, embeds and more.",
+  "blurb": "AFK, reminders, suggestions, starboard, verification, snipe and more.",
   "commands": [
    {
     "c": "/afk",

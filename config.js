@@ -10,7 +10,7 @@ window.BOT = {
   supportServer: 'https://discord.gg/fyHJKjGRw4',
   // Email for questions and data-deletion requests (shown in the privacy policy)
   contactEmail: 'businesswiththehr@gmail.com',
-  lastUpdated: 'November 3, 2026',
+  lastUpdated: 'November 4, 2026',
   // Your real numbers (optional). Leave 0 to hide the server counter.
   servers: 0,
 };
