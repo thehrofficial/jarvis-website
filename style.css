@@ -234,3 +234,24 @@ details p{padding:0 0 22px;color:#a3bceb;font-size:16px}
 .doc h2 .tag{font:500 13px var(--mono);color:#8cc7ff;background:#12204a;padding:3px 10px;border-radius:999px;margin-left:10px;vertical-align:middle}
 
 @media(min-width:861px) and (max-width:1240px){nav.main a{padding:8px 9px;letter-spacing:.06em;font-size:13px}.site-header .brand{margin-right:14px}}
+
+/* plainer look: flat colours, no glow or animation */
+:root{--bg:#0c111b;--panel:#121927;--panel-solid:#121927;--line:#232c3d;--line-strong:#34415a}
+body{background:var(--bg)}
+#net,.bg-glow,.bg-grid,.cursor-glow,.marquee,.orbit-stage .ring,.orbiter{display:none!important}
+h1,h2,h3,.brand span,.btn{font-family:var(--body);letter-spacing:0}
+h1{font-size:clamp(38px,5.5vw,64px);line-height:1.08;font-weight:600;margin:0 0 18px}
+h1 .grad,.grad{background:none;color:inherit;animation:none}
+.sec-head{text-align:left;margin:0 0 32px;max-width:640px}
+.sec-head h2{font-size:clamp(26px,3.4vw,36px);font-weight:600;letter-spacing:0}
+.card{backdrop-filter:none;background:var(--panel);box-shadow:none;transition:border-color .2s}
+.card:hover{box-shadow:none;transform:none;border-color:var(--line-strong)}
+.card::before{display:none}
+.orbit-stage .logo{box-shadow:none;animation:none;border-radius:24px}
+.orbit-stage{width:min(300px,70vw)}
+.btn-primary{box-shadow:none;background:#2f7bf5}
+.hero{align-items:center}
+.hero{min-height:0!important;padding:70px 0 50px!important}
+.nav a,.btn,.tabs button,nav a{text-transform:none!important;letter-spacing:0!important;font-weight:500}
+.lead{font-size:18px;max-width:520px}
+section{padding:56px 0}

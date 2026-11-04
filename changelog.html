@@ -14,7 +14,6 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<canvas id="net" aria-hidden="true"></canvas><div class="bg-glow"></div><div class="bg-grid"></div><div class="cursor-glow"></div>
 <div id="site-header"></div>
 <main class="wrap doc">
 <h1>Changelog</h1>
@@ -23,7 +22,9 @@
 <h3>AI safety</h3>
 <ul>
 <li>The AI no longer shows its instructions, keys or tokens. Tricks like "debug mode" or "ignore previous rules" get a short refusal.</li>
-<li>Every reply is checked for leaks before it is sent, and user names are cleaned so nobody can fake a message.</li>
+<li>Every reply is checked for leaks before it is sent, also when it is hidden in base64, hex or reversed text. User names are cleaned so nobody can fake a message.</li>
+<li><code>/ai persona</code> and <code>/ai teach</code> refuse encoded or "decode this" tricks.</li>
+<li>Someone who tries three times in 30 minutes is blocked from the AI for an hour (<code>/ai unblock</code> undoes it). The bot owner gets an alert with the username, user ID and server name.</li>
 <li>The AI now looks up the real commands that match a question, so it gives the exact syntax.</li>
 </ul>
 <h3>Fun</h3>

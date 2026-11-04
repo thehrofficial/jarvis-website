@@ -497,6 +497,11 @@ window.FEATURES = [
     "d": "How to get a free AI key and add it"
    },
    {
+    "c": "/ai unblock",
+    "a": "user",
+    "d": "Let someone use the AI again after the security block"
+   },
+   {
     "c": "/ai status",
     "a": "",
     "d": "Is AI working?"

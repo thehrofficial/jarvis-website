@@ -14,69 +14,48 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<canvas id="net" aria-hidden="true"></canvas><div class="bg-glow"></div><div class="bg-grid"></div><div class="cursor-glow"></div>
 <div id="site-header"></div>
 
 <main>
 <div class="wrap hero">
   <div>
-    <span class="eyebrow"><i></i> Free, no paywall</span>
-    <h1><span class="grad">JARVIS</span><br>All-in-one<br>Discord bot</h1>
+    <h1>JARVIS, a free Discord bot</h1>
     <p class="lead">I built JARVIS to replace the five or six bots most servers end up running: moderation, tickets, music, levels, giveaways, an AI chat channel and more. Everything is free.</p>
     <div class="cta">
       <a class="btn btn-primary" data-invite href="#">Add to Discord</a>
       <a class="btn btn-ghost" data-support href="#">Support server</a>
       <a class="btn btn-ghost" href="commands.html">Browse commands</a>
     </div>
-    <div class="mini-stats">
-      <div><b data-to="1" data-count="cmds">0</b><span>Commands</span></div>
-      <div><b data-to="12">0</b><span>Audio effects</span></div>
-      <div data-hide-if-no-servers><b data-servers data-to="0">0</b><span>Servers</span></div>
-      <div><b>24/7</b><span>Music mode</span></div>
-    </div>
   </div>
   <div class="orbit-stage">
-    <div class="ring r2"></div><div class="ring"></div>
-    <div class="orbiter" id="orbiter"></div>
     <img class="logo" src="assets/logo.png" alt="JARVIS logo: a crowned J on a shield" width="640" height="640" fetchpriority="high">
   </div>
 </div>
 
-<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marq"></div></div>
-
 <section id="features"><div class="wrap">
-  <div class="sec-head rv"><div class="kicker">What is inside</div><h2>Everything a server <span class="grad">needs</span></h2><p>Moderation, tickets, music, levels and the rest. Anything you do not use can stay off.</p></div>
+  <div class="sec-head rv"><h2>Everything a server needs</h2><p>Moderation, tickets, music, levels and the rest. Anything you do not use can stay off.</p></div>
   <div class="grid" id="feature-grid"></div>
 </div></section>
 
 <section style="padding-top:20px"><div class="wrap">
-  <div class="sec-head rv"><div class="kicker">The details</div><h2>What each part <span class="grad">does</span></h2><p>A short look at every feature, with an example of how it looks.</p></div>
+  <div class="sec-head rv"><h2>What each part does</h2><p>A short look at every feature, with an example of how it looks.</p></div>
   <div id="details"></div>
 </div></section>
 
 <section id="showcase"><div class="wrap">
-  <div class="sec-head rv"><div class="kicker">Preview</div><h2>How it looks <span class="grad">in Discord</span></h2><p>Mostly buttons, menus and forms, so you do not have to remember long commands.</p></div>
+  <div class="sec-head rv"><h2>How it looks in Discord</h2><p>Mostly buttons, menus and forms, so you do not have to remember long commands.</p></div>
   <div class="show rv">
     <div class="tabs" id="tabs"></div>
     <div class="chat"><div class="chat-bar"><i></i><i></i><i></i>&nbsp;&nbsp;<span id="chat-ch">#music</span></div><div class="chat-body" id="chat-body"></div></div>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <div class="numbers rv">
-    <div class="num"><b data-to="1" data-count="cmds">0</b><span>Commands</span></div>
-    <div class="num"><b data-to="7">0</b><span>Antinuke guards</span></div>
-    <div class="num"><b data-to="12">0</b><span>Music effects</span></div>
-    <div class="num"><b data-to="60">0</b><span>Reaction GIFs</span></div>
-  </div>
-</div></section>
-
 <section style="padding:30px 0"><div class="wrap">
-  <div class="sec-head rv" style="margin-bottom:0"><div class="kicker">Commands</div><h2>Slash or <span class="grad">prefix</span></h2><p>Every command works as <code style="font-family:var(--mono);color:#8cc7ff">/play</code> and with a prefix like <code style="font-family:var(--mono);color:#8cc7ff">!play</code>. Admins can change the prefix with <code style="font-family:var(--mono);color:#8cc7ff">/prefix</code>.</p></div>
+  <div class="sec-head rv" style="margin-bottom:0"><h2>Slash or prefix</h2><p>Every command works as <code style="font-family:var(--mono);color:#8cc7ff">/play</code> and with a prefix like <code style="font-family:var(--mono);color:#8cc7ff">!play</code>. Admins can change the prefix with <code style="font-family:var(--mono);color:#8cc7ff">/prefix</code>.</p></div>
 </div></section>
 
 <section id="setup"><div class="wrap">
-  <div class="sec-head rv"><div class="kicker">Getting started</div><h2>Set it up in <span class="grad">three steps</span></h2></div>
+  <div class="sec-head rv"><h2>Set it up in three steps</h2></div>
   <div class="steps">
     <div class="step rv"><h3>Add the bot</h3><p>Click <b>Add to Discord</b>, pick your server and approve the permissions.</p></div>
     <div class="step rv"><h3>Run the setup</h3><p>Type <code>/setup wizard</code>. It asks for the welcome channel, logs and a few other things with menus. After that, <code>/ticket setup</code> if you want tickets and <code>/antinuke enable</code> for protection.</p></div>
@@ -86,7 +65,7 @@
 </div></section>
 
 <section id="custom"><div class="wrap">
-  <div class="sec-head rv"><div class="kicker">Optional</div><h2>Give the bot <span class="grad">your own look</span></h2><p>I can set a custom name, picture, banner and bio for the bot inside your server. Other servers do not see it.</p></div>
+  <div class="sec-head rv"><h2>Give the bot your own look</h2><p>I can set a custom name, picture, banner and bio for the bot inside your server. Other servers do not see it.</p></div>
   <div class="grid" style="max-width:820px;margin:auto">
     <div class="card rv"><h3>Custom bot profile</h3><p>I set this up by hand for you, and you can change or remove it whenever you like. It costs money because it is manual work. Every feature of the bot stays free.</p>
       <p style="margin-top:12px">Open a ticket in the support server and I will tell you the price and what I need from you.</p>
@@ -95,7 +74,7 @@
 </div></section>
 
 <section id="faq"><div class="wrap">
-  <div class="sec-head rv"><div class="kicker">FAQ</div><h2>Common <span class="grad">questions</span></h2></div>
+  <div class="sec-head rv"><h2>Common questions</h2></div>
   <div class="faq rv">
     <details><summary>Is JARVIS free?</summary><p>Yes. The only thing that costs money is the optional custom bot profile (your own name, picture and banner for the bot in your server).</p></details>
     <details><summary>Which permissions does it need?</summary><p>The invite does <b>not</b> ask for Administrator. It asks only for what the features need: Manage Channels, Manage Roles, Ban and Kick Members, View Audit Log, Manage Messages, Manage Webhooks, Connect, Speak and similar. If a feature says it is missing a permission, give the bot that permission in the channel, and make sure the JARVIS role is above the roles it manages.</p></details>
@@ -109,7 +88,7 @@
 <section><div class="wrap">
   <div class="cta-box rv">
     <img src="assets/banner.jpg" alt="" loading="lazy">
-    <div class="over"><h2>Add JARVIS <span class="grad">to your server</span></h2><p style="color:#b6caee;max-width:520px">Free, and it takes about two minutes.</p>
+    <div class="over"><h2>Add JARVIS to your server</h2><p style="color:#b6caee;max-width:520px">Free, and it takes about two minutes.</p>
       <div class="cta"><a class="btn btn-primary" data-invite href="#">Add JARVIS</a><a class="btn btn-ghost" data-support href="#">Support server</a><a class="btn btn-ghost" href="commands.html">See all commands</a></div></div>
   </div>
 </div></section>
