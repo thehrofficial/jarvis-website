@@ -255,3 +255,23 @@ h1 .grad,.grad{background:none;color:inherit;animation:none}
 .nav a,.btn,.tabs button,nav a{text-transform:none!important;letter-spacing:0!important;font-weight:500}
 .lead{font-size:18px;max-width:520px}
 section{padding:56px 0}
+
+/* gentle motion */
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes bob{50%{transform:translateY(-10px)}}
+@keyframes drift{to{transform:translate3d(50px,26px,0)}}
+body::before{content:"";position:fixed;left:-10%;right:-10%;top:-12%;height:560px;background:radial-gradient(520px 260px at 20% 25%,#2f7bf524,transparent 70%),radial-gradient(440px 240px at 80% 10%,#38bdf81f,transparent 70%);pointer-events:none;z-index:-1;animation:drift 16s ease-in-out infinite alternate}
+.hero h1{animation:rise .7s both}.hero .lead{animation:rise .7s .12s both}.hero .cta{animation:rise .7s .24s both}
+.orbit-stage .logo{animation:bob 6s ease-in-out infinite}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.grid .rv:nth-child(3n+2){transition-delay:.07s}.grid .rv:nth-child(3n+3){transition-delay:.14s}
+.card{transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,background .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--line-strong);background:#162238}
+.card .ico svg{transition:transform .3s cubic-bezier(.2,.8,.2,1)}.card:hover .ico svg{transform:scale(1.18) rotate(-6deg)}
+.btn{transition:transform .2s,background .25s,border-color .25s,filter .25s}.btn:hover{transform:translateY(-2px)}
+.btn-primary{position:relative;overflow:hidden}.btn-primary::after{content:"";position:absolute;top:0;left:-70%;width:50%;height:100%;background:linear-gradient(100deg,transparent,#ffffff40,transparent);transform:skewX(-20deg);transition:left .6s}.btn-primary:hover::after{left:130%}
+.faq details{transition:background .25s}.faq details[open]{background:#ffffff05}
+.drow .chat{transition:transform .4s cubic-bezier(.2,.8,.2,1)}.drow:hover .chat{transform:translateY(-4px)}
+.step{transition:transform .3s cubic-bezier(.2,.8,.2,1)}.step:hover{transform:translateY(-4px)}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}body::before{display:none}}

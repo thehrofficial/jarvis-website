@@ -97,17 +97,17 @@ window.FEATURES = [
    {
     "c": "/automod addword",
     "a": "word",
-    "d": "Ban a word or phrase (also catches f.u.c.k, f4ck, fuuuck)"
+    "d": "Block a word or phrase (sneaky spellings and symbols are caught too)"
    },
    {
     "c": "/automod removeword",
     "a": "word",
-    "d": "Unban a word or phrase"
+    "d": "Allow a blocked word or phrase again"
    },
    {
     "c": "/automod words",
     "a": "",
-    "d": "List banned words (only you can see)"
+    "d": "Show the blocked words (only you can see)"
    },
    {
     "c": "/automod ignore",
