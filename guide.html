@@ -20,6 +20,9 @@
 <h1>Server guide</h1>
 <p>Everything you need to set JARVIS up in your server, step by step. You need the <b>Manage Server</b> permission. Type <code>/</code> in Discord and pick the command. Options marked optional can be skipped.</p>
 
+<h2>Easiest way: the web dashboard</h2>
+<p>Almost everything below can also be set with clicks on the <b>dashboard</b>. Log in with Discord, pick your server and use the pages on the left: Welcome, Logs, Automod, Warnings, Tickets, Levels, Server stats, Invite rewards and more. It shows what is not set up yet and has a small helper you can ask in your own words. Only people with <b>Manage Server</b> can change things, and antinuke can be changed by the server owner only. Try the <b>demo</b> first, no login needed.</p>
+
 <h2>1. First steps</h2>
 <ol>
 <li>Add JARVIS with the <b>Add to Discord</b> button.</li>
@@ -120,6 +123,14 @@
 <li><code>/setup youtube creator:youtube.com/@name post_in:#videos role:@Fans</code> announces new videos (no key needed).</li>
 <li><code>/setup twitch streamer:name post_in:#live</code> announces when they go live. The bot owner must add a free Twitch app key first.</li>
 <li><code>/setup notifications</code> lists them. Use <code>action:test</code> to see a sample, <code>action:remove</code> to delete.</li>
+</ol>
+
+<h2>Warnings, scam links and server stats</h2>
+<ol>
+<li><b>Automatic punishment for warnings:</b> in the dashboard page <b>Warnings</b> choose a timeout every N warnings, and optionally a kick or a ban at a number. <code>0</code> turns a step off. Staff use <code>/warn</code>, <code>/warnings</code> and <code>/unwarn</code>.</li>
+<li><b>Scam link protection:</b> <code>/automod</code> now has a rule for fake Nitro, fake Steam and look-alike Discord links. The Light, Standard and Strict presets include it.</li>
+<li><b>Server stats channels:</b> in the dashboard page <b>Server stats</b> press <b>Create channels for me</b>. You get locked voice channels like &ldquo;Members: 1,234&rdquo; that update every 10 minutes. Needs the <b>Manage Channels</b> permission.</li>
+<li><b>Leaderboards:</b> <code>/leaderboard</code> shows levels, messages or invites with a podium and page buttons.</li>
 </ol>
 
 <h2>Voice rooms</h2>
