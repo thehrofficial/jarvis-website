@@ -21,6 +21,12 @@
 <p>What changed in JARVIS, newest first. If something here does not work for you, tell us in the support server.</p>
 <h2 id="v5.10.0">5.10.0 <span class="tag">Dashboard API</span></h2>
 <ul>
+<li><b>Web dashboard:</b> change most settings with clicks. Log in with Discord, pick your server. There is a demo that needs no login.</li>
+<li>New premium look for the level-up card, with a glowing avatar and a level badge. A long name no longer covers the level.</li>
+<li><b>Horror memes:</b> <code>/random type:Meme subreddit:Horror mix</code> (or r/horrormemes, r/creepy, r/LiminalSpace).</li>
+<li><code>/role action:time</code> shows how long a timed role has left, and <code>/role action:list</code> shows all timed roles in the server.</li>
+<li><code>/setup serverstats</code> makes live counter channels (members, bots, boosts) from a command, not only the dashboard.</li>
+<li>Fixed an error when a deleted message had no known author (it broke <code>/snipe</code>).</li>
 <li>Upload welcome, goodbye, ticket and level-card pictures from the dashboard (file or link).</li>
 <li>The Open transcript button now stays in the DM after you rate a ticket.</li>
 <li>Antinuke: 100 trusted people, and a check that tells you what is missing so it really works.</li>
@@ -30,16 +36,12 @@
 <li><b>Server stats channels</b> (members, people, bots, online, boosts) created and updated by the bot.</li>
 <li>Leaderboards for levels, messages and invites share one cleaner look with a podium.</li>
 <li>Ticket numbers (open, closed, first reply time, rating, top staff) on the dashboard.</li>
-<li>Owner panel on the dashboard: servers, health, disk use, most used commands and recent errors (bot owner only).</li>
-<li>The bot cleans its own cache and old files every 3 hours, and <code>/owner doctor</code> shows where disk space goes.</li>
-<li>The bot can now talk to a web dashboard through a private, signed API. It is switched off unless the owner sets a secret.</li>
 <li>The dashboard can change most settings: welcome and goodbye, logs, levels with reward roles, automod with banned words, auto replies, AI chat and feature channels, plus an AI help button.</li>
-<li>Tickets are fully controlled from it (staff roles, ticket types, panel text, limits, posting the panel). Antinuke and anti-raid too, with presets and a lockdown button. Antinuke stays owner-only.</li>
+<li>Tickets are fully controlled from it (staff roles, ticket types, panel text, limits, posting the panel). Antinuke and anti-raid too, with presets and a lockdown button.</li>
 <li>The saved welcome or goodbye banner can now be removed from the dashboard.</li>
 <li>Closed tickets can show an Open transcript button that opens the chat in your browser, with nothing to download.</li>
 <li>New dashboard pages: birthdays, verification, invite rewards, shop, sticky messages and more log settings.</li>
 <li>The AI no longer mentions the support server or invite link unless you ask for them.</li>
-<li>The AI refuses questions about its own setup (even yes/no ones). Someone blocked more than twice needs the bot owner's approval.</li>
 </ul>
 <h2 id="v5.9.0">5.9.0 <span class="tag">AI safety, more GIFs, simpler tickets</span></h2>
 <h3>AI safety</h3>
@@ -47,7 +49,6 @@
 <li>The AI no longer shows its instructions, keys or tokens. Tricks like "debug mode" or "ignore previous rules" get a short refusal.</li>
 <li>Every reply is checked for leaks before it is sent, also when it is hidden in base64, hex or reversed text. User names are cleaned so nobody can fake a message.</li>
 <li><code>/ai persona</code> and <code>/ai teach</code> refuse encoded or "decode this" tricks.</li>
-<li>Someone who tries three times in 30 minutes is blocked from the AI for an hour (<code>/ai unblock</code> undoes it). The bot owner gets an alert with the username, user ID and server name.</li>
 <li>The AI now looks up the real commands that match a question, so it gives the exact syntax.</li>
 </ul>
 <h3>Fun</h3>
@@ -166,7 +167,6 @@
 <li>YouTube and Twitch alerts: <code>/setup youtube</code> and <code>/setup twitch</code> post new videos and live streams, with an optional role ping and your own text. <code>/setup notifications</code> lists, tests and removes them.</li>
 <li>Giveaways: set the time like <code>2h</code> or <code>1d12h</code>, post in any channel, set requirements (level, messages, invites, account age, time in the server), quick <code>/giveaway drop</code> where the first click wins, plus <code>edit</code>, <code>pause</code>, <code>cancel</code> and <code>list</code>.</li>
 <li>Winners get a DM, and a reroll never picks someone who already won.</li>
-<li>Fixed an error in the owner emoji list when there were very many emojis.</li>
 </ul>
 <h2 id="v5.1.0">5.1.0 <span class="tag">Invites, messages, antinuke</span></h2>
 <ul>
@@ -183,7 +183,6 @@
 <li>Custom commands: <code>/tag</code>, also usable with the prefix.</li>
 <li>Giveaways: see who joined, remove someone, extra entries and required or blocked roles.</li>
 <li>Role panels with up to 10 roles (<code>/rolepanel</code>), a join-to-create voice panel (<code>/voice interface</code>) and auto reactions in a channel (<code>/setup autoreact</code>).</li>
-<li>Birthdays (<code>/birthday</code>), emoji swap for the bot owner, bigger avatar and banner uploads, and a settings panel with <code>/setup panel</code>.</li>
 </ul>
 </main>
 </main>
