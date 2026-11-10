@@ -21,6 +21,11 @@
 <p>What changed in JARVIS, newest first. If something here does not work for you, tell us in the support server.</p>
 <h2 id="v5.10.0">5.10.0 <span class="tag">Dashboard API</span></h2>
 <ul>
+<li><b>Transcript link fixed:</b> the link in the DM and in the log now stays valid even if someone presses the Transcript button again (before, a new press made the old link expire).</li>
+<li><b>AI limits for your own key:</b> servers that add their own AI key can set how often people may ask, answers per minute and per day, and the longest reply (<code>/ai limits</code> or the dashboard).</li>
+<li><b>Tickets:</b> every ticket type counts on its own, so Support and Promotion both start at 0001 (channel names like <code>promotion-0001</code>, <code>support-0001</code>).</li>
+<li><b>Transcripts</b> are now stored safely with the rest of your data, so the Open transcript link keeps working after the bot restarts or updates.</li>
+<li><b>AI chat:</b> with no channel set it answers when you ping it, in any channel. Pick channels to let it chat freely there. <code>/ai channel only:True</code> keeps it silent everywhere else.</li>
 <li><b>Web dashboard:</b> change most settings with clicks. Log in with Discord, pick your server. There is a demo that needs no login.</li>
 <li>New premium look for the level-up card, with a glowing avatar and a level badge. A long name no longer covers the level.</li>
 <li><b>Horror memes:</b> <code>/random type:Meme subreddit:Horror mix</code> (or r/horrormemes, r/creepy, r/LiminalSpace).</li>
