@@ -1124,6 +1124,11 @@ window.FEATURES = [
     "d": "Show or change the text-command prefix (like !play)"
    },
    {
+    "c": "/setup template",
+    "a": "template?, style?, category_style?, self_roles?, tickets?, stats?",
+    "d": "Build a whole server in one go: roles, channels, role panels, tickets and settings (owner or admin)"
+   },
+   {
     "c": "/setup autoreact",
     "a": "channel, emojis?, off?",
     "d": "Bot adds reactions to every message in a channel"

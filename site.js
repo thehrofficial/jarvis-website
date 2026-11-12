@@ -31,7 +31,7 @@
 
   /* ---------- shared header / footer ---------- */
   const page = location.pathname.split('/').pop() || 'index.html';
-  const nav = [['index.html#features', 'Features'], ['commands.html', 'Commands'], ['index.html#showcase', 'Showcase'], ['guide.html', 'Guide'], ['changelog.html', 'Changelog'], ['index.html#setup', 'Setup'], ['index.html#faq', 'FAQ']];
+  const nav = [['index.html#features', 'Features'], ['commands.html', 'Commands'], ['index.html#dashboard', 'Dashboard'], ['guide.html', 'Guide'], ['changelog.html', 'Changelog'], ['index.html#faq', 'FAQ']];
   const hdr = $('#site-header');
   if (hdr) hdr.outerHTML = `<header class="site-header"><div class="wrap">
     <a class="brand" href="index.html"><img src="assets/favicon.png" alt="" width="38" height="38"><span>${B.name}</span></a>
@@ -40,7 +40,7 @@
     <button class="menu-btn" id="menu" aria-label="Menu">☰</button></div></header>`;
   const ftr = $('#site-footer');
   if (ftr) ftr.outerHTML = `<footer class="site-footer"><div class="wrap"><div class="links">
-    <a href="index.html">Home</a><a href="commands.html">Commands</a><a href="guide.html">Guide</a><a href="changelog.html">Changelog</a><a href="ai-key.html">AI key</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
+    <a href="index.html">Home</a><a href="commands.html">Commands</a><a href="guide.html">Guide</a><a href="changelog.html">Changelog</a><a href="https://jarvis-dashboard-official.vercel.app" target="_blank" rel="noopener">Dashboard</a><a href="ai-key.html">AI key</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
     ${B.supportServer ? `<a href="${B.supportServer}" target="_blank" rel="noopener">Support server</a>` : ''}</div>
     <p class="legal">&copy; ${new Date().getFullYear()} ${B.name}. Not affiliated with or endorsed by Discord Inc.</p></div></footer>`;
   document.addEventListener('click', (e) => { if (e.target.id === 'menu') $('#nav').classList.toggle('open'); else if (e.target.closest('#nav a')) $('#nav')?.classList.remove('open'); });
