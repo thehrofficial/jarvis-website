@@ -152,6 +152,18 @@
   </div>
 </div></section>
 
+<section class="blk alt" id="try"><div class="wrap">
+  <div class="head"><span class="kick">Find a command</span><h2>Type what you want to do.</h2><p>Search all <span id="cc">99</span> commands, right here.</p></div>
+  <div class="cmdbox"><input id="cq" type="search" placeholder="try: ban, ticket, giveaway, play, rank…" autocomplete="off" aria-label="Search commands"><ul id="cr"></ul></div>
+</div></section>
+
+<section class="blk" id="templates"><div class="wrap">
+  <div class="head"><span class="kick">Templates</span><h2>16 server layouts, one command.</h2><p><code>/setup template</code> builds roles, channels, role panels, a ticket desk and staff-only log channels. You see a preview first and nothing is built until you press the button.</p></div>
+  <div class="tplgrid">
+    <span>🎮 Gaming</span><span>🌍 Community</span><span>📚 Study</span><span>🎥 Creator</span><span>💼 Business</span><span>⛏️ Minecraft</span><span>🍥 Anime</span><span>🎭 Roleplay</span><span>🏆 Clan</span><span>🌙 Chill</span><span>🛒 Shop</span><span>📈 Trading</span><span>🎧 Music</span><span>💻 Coding</span><span>🎨 Art</span><span>🤖 Bot support</span>
+  </div>
+</div></section>
+
 <section class="blk"><div class="wrap">
   <div class="endcta"><h2>Add JARVIS to your server.</h2><p>Free, and it takes about two minutes.</p>
     <div class="cta c"><a class="btn btn-primary" data-invite href="#">Add to Discord</a><a class="btn btn-ghost" data-support href="#">Support server</a><a class="btn btn-ghost" href="https://jarvis-dashboard-official.vercel.app" target="_blank" rel="noopener">Dashboard</a></div></div>
@@ -160,6 +172,14 @@
 <div id="site-footer"></div>
 <script src="config.js"></script><script src="data.js"></script><script src="site.js"></script>
 <script>
+(function(){
+  var q=document.getElementById('cq'),r=document.getElementById('cr'),all=[];
+  (window.FEATURES||[]).forEach(function(f){f.commands.forEach(function(c){all.push({c:c.c,a:c.a,d:c.d,f:f.name})})});
+  function esc(t){return String(t).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
+  function show(v){v=(v||'').toLowerCase().trim();var hits=all.filter(function(x){return !v||(x.c+' '+x.d+' '+x.f).toLowerCase().indexOf(v)>-1}).slice(0,v?8:5);
+    r.innerHTML=hits.length?hits.map(function(x){return '<li><code>'+esc(x.c)+'</code> <small>'+esc(x.a||'')+'</small><span>'+esc(x.d)+'</span><em>'+esc(x.f)+'</em></li>'}).join(''):'<li class="none">No command like that. Ask in the support server.</li>';}
+  if(q){q.addEventListener('input',function(){show(q.value)});show('');var n=document.getElementById('cc');if(n&&window.COMMAND_COUNT)n.textContent=window.COMMAND_COUNT;}
+})();
 (function(){
   function seg(id,img,fn){var box=document.getElementById(id),im=document.getElementById(img);if(!box||!im)return;
     box.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
